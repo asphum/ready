@@ -1,86 +1,3 @@
-/* ----------------------------------
-
-Main CSS file for Discuz! X
-(C) Comsenz Inc.
-http://www.comsenz.com
-Created & Modified by Lushnis, Pony, Alice, Dfox & DragonLee.
-
-----------------------------------
-
-结构目录：
-	1. 重定义浏览器默认样式
-	2. 全局常用 CSS 样式
-	3. 表单及表单元素
-	4. 页面布局以及通用的区块样式
-	5. 列表样式vwmy
-	6. 其他特定功能块
-		1. 个人中心面板
-		2. 简易编辑器
-		3. 弹出菜单、弹出层及弹出窗口
-		4. 联系人列表、短消息窗口
-		5. 登录和注册
-		6. 其他
-	7. 拖拽及页面 DIY
-
-	*  其他页面专用样式参见 module.css
-
-----------------------------------
-
-常用变量说明：
-
-	通用边框颜色：		{COMMONBORDER}		#CDCDCD
-	通用背景填充色：		{COMMONBG}			#F2F2F2
-	特殊边框颜色：		{SPECIALBORDER}		#D1D9DF
-	特殊背景填充色：		{SPECIALBG}			#E9F2F9
-
-----------------------------------
-
-CSS 样式模块的格式示例：
-
-	Name:			模块名称
-	Level:			级别（Global, Channel, Function）
-	Dependent:		依赖关系，该模块必须依赖于何种模块
-	Sample:			用法示例，或指出改模块所作用的直接页面
-	Explain:		附加说明
-	Author:			创建者 日期(两位数年月日时)
-	Last Modify:	最终修改者 日期(两位数年月日时)
-
-----------------------------------
-
-CSS 写作注意事项：
-	1. 属性写在一行内，属性之间、属性名和值之间以及属性与“{}”之间须有空格，例如：.class { width: 400px; height: 300px; }
-	2. 属性的书写顺序：
-		2.1. 按照元素模型由外及内，由整体到细节书写，大致分为五组：
-			位置：position,left,right,float
-			盒模型属性：display,margin,padding,width,height
-			边框与背景：border,background
-			段落与文本：line-height,text-indent,font,color,text-decoration,...
-			其他属性：overflow,cursor,visibility,...
-		2.2. 针对特殊浏览器的属性，应写在标准属性之前，例如：-webkit-box-shadow:; -moz-box-shadow:; box-shaow:;
-	3. 谨慎添加新的选择符规则，尤其不可滥用 id，尽可能继承和复用已有样式
-	4. 选择符、属性、值均用小写（格式的颜色值除外），缩写的选择符名称须说明缩写前的全称，例如 .cl -> Clearfix
-	5. 避免使用各种 CSS Hack，如需对 IE 进行特殊定义，请参阅下节“关于 CSS Hack 的说明”
-	6. 勿使用冗余低效的 CSS 写法，例如：
-		ul li a span { ... }
-	7. 慎用 !important
-	8. 建议使用在 class/id 名称中的词语
-		6.1. 表示状态：a->active
-		6.2. 表示结构：h->header,c->content,f->footer
-		6.3. 表示区域：mn->main,sd->side,nv-navigation,mu->menu
-		6.4. 表示样式：l-list,tab,p_pop
-	9. 开发过程中的未定事项，须用 [!] 标出，以便于后续讨论整理
-
-----------------------------------
-
-关于 CSS Hack 的说明：
-
-	所有 IE浏览器适用：	.ie_all .foo { ... }
-	IE6 专用：			.ie6 .foo { ... }
-	IE7 专用：			.ie7 .foo { ... }
-	IE8 专用：			.ie8 .foo { ... }
-
----------------------------------- */
-
 /*
 	Name:			mod_reset
 	Level:			Global
@@ -574,17 +491,17 @@ CSS 写作注意事项：
 		.pmfl			PM friend list (Window)
 		*/
 
-/* 通用容器，定义页面宽度 */ .wp { margin: 0 auto; width: 960px; } #wp .wp { width: auto; }
+/* 通用容器，定义页面宽度 */ .wp { margin: 0 auto; width: auto; } #wp .wp { width: auto; }
 
 /* 页头 */
-	#toptb { min-width: 960px; border-bottom: 1px solid {COMMONBORDER}; background: {COMMONBG}; line-height: 28px; }
+	#toptb { min-width: auto; border-bottom: 1px solid {COMMONBORDER}; background: {COMMONBG}; line-height: 28px; }
 		#toptb a { float: left; padding: 0 4px; height: 28px; }
 		#toptb a.showmenu { padding-right: 15px; }
 		#toptb a.hover { background-color: #FFF; }
 		#toptb .pipe { float: left; display: none; }
 
 	#hd { border-bottom: {HEADERBORDER} solid {SPECIALBORDER}; {HEADERBGCODE} }
-		#hd .wp { padding: 10px 0 0; }
+		#hd .wp {  }
 
 			.hdc { min-height: 70px; }
 				.ie6 .hdc { height: 70px; }
