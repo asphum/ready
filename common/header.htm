@@ -90,52 +90,27 @@
 			<!--{/if}-->
 			<!--{subtemplate common/header_qmenu}-->
 		<!--{/if}-->
-
 		<!--{ad/headerbanner/wp a_h}-->
-		<div id="hd">
-			<div class="wp container-sm">
-				<div class="hdc cl">
-					<!--{eval $mnid = getcurrentnav();}-->
-					<h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
-					<!--{template common/header_userstatus}-->
-				</div>
-
-				<div id="nv">
-					<a href="javascript:;" id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu($_G[fid]);})">{lang my_nav}</a>
-					<ul>
-						<!--{loop $_G['setting']['navs'] $nav}-->
-							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="a" {/if}$nav[nav]></li><!--{/if}-->
-						<!--{/loop}-->
-					</ul>
-					<!--{hook/global_nav_extra}-->
-				</div>
-				<!--{if !empty($_G['setting']['plugins']['jsmenu'])}-->
-					<ul class="p_pop h_pop" id="plugin_menu" style="display: none">
-					<!--{loop $_G['setting']['plugins']['jsmenu'] $module}-->
-						 <!--{if !$module['adminid'] || ($module['adminid'] && $_G['adminid'] > 0 && $module['adminid'] >= $_G['adminid'])}-->
-						 <li>$module[url]</li>
-						 <!--{/if}-->
-					<!--{/loop}-->
-					</ul>
-				<!--{/if}-->
-				$_G[setting][menunavs]
-				<div id="mu" class="cl">
-				<!--{if $_G['setting']['subnavs']}-->
-					<!--{loop $_G[setting][subnavs] $navid $subnav}-->
-						<!--{if $_G['setting']['navsubhover'] || $mnid == $navid}-->
-						<ul class="cl {if $mnid == $navid}current{/if}" id="snav_$navid" style="display:{if $mnid != $navid}none{/if}">
-						$subnav
-						</ul>
-						<!--{/if}-->
-					<!--{/loop}-->
-				<!--{/if}-->
-				</div>
-				<!--{ad/subnavbanner/a_mu}-->
-				<!--{subtemplate common/pubsearchform}-->
-			</div>
-		</div>
-
 		<!--{hook/global_header}-->
 	<!--{/if}-->
+	<div class="container-sm">
+		<div class="row">
+			<div class="col-md-3">
 
-	<div id="wp" class="wp container-sm">
+
+									
+									<div class="mainmenu nv">
+
+											<ul class="nav flex-column">
+												<!--{eval $mnid = getcurrentnav();}-->
+												<!--{loop $_G['setting']['navs'] $nav}-->
+													<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
+												<!--{/loop}-->
+											</ul>
+											<!--{hook/global_nav_extra}-->
+										</div>
+										<!--{ad/subnavbanner/a_mu}-->
+ 
+			</div>
+		<div class="col-md-9" style="position: unset;">
+			<div id="wp" class="wp">

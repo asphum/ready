@@ -6,3 +6,34 @@
 .t_f img {
     max-width: 100% !important;
 }
+@media (max-width: 959px) {
+	html {font-size: 60% !important;}
+	
+ }
+.mainmenu {
+    padding: 10px;
+}
+.mainmenu ul li {
+    margin: 5px;
+}
+.mainmenu ul li a {
+    padding: 10px 15px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+}
+.activemenu, .mainmenu ul li a:hover {
+    color: #333 !important;
+}
+
+.activemenu, .mainmenu ul li:hover {
+    border: none;
+    border-radius: 14px;
+    background-color: #eeeeee;
+}
+.mainmenu ul li a span {
+    padding: 0 10px;
+    display: table-footer-group;
+    font-size: 1.2rem;
+}

@@ -6,7 +6,7 @@
 	<!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 
 	<!--{if $_G['config']['output']['iecompatible']}--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE{$_G['config']['output']['iecompatible']}" /><!--{/if}-->
-	<title><!--{if !empty($navtitle)}-->$navtitle - <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--></title>
+	<title><!--{if !empty($navtitle)}-->$navtitle <!--{/if}--><!--{if empty($nobbname)}-->$_G['setting']['bbname']<!--{/if}--></title>
 	$_G['setting']['seohead']
 
 	<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
@@ -34,4 +34,4 @@
 	<script type="text/javascript" src="{$_G[setting][jspath]}common.js?{VERHASH}"></script>
 	<!--{if empty($_GET['diy'])}--><!--{eval $_GET['diy'] = '';}--><!--{/if}-->
 	<!--{if !isset($topic)}--><!--{eval $topic = array();}--><!--{/if}-->
-	<link rel="stylesheet" href="template/ready/common/addstyle.css?{VERHASH}" />
+	<link rel="stylesheet" href="template/ready/common/addstyle.css" />
