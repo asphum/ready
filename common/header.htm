@@ -96,21 +96,20 @@
 	<div class="container-sm">
 		<div class="row">
 			<div class="col-md-3">
-
-
-									
-									<div class="mainmenu nv">
-
-											<ul class="nav flex-column">
-												<!--{eval $mnid = getcurrentnav();}-->
-												<!--{loop $_G['setting']['navs'] $nav}-->
-													<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
-												<!--{/loop}-->
-											</ul>
-											<!--{hook/global_nav_extra}-->
-										</div>
-										<!--{ad/subnavbanner/a_mu}-->
- 
+				<div class="mainmenu nv">
+					<ul class="nav flex-column">
+						<!--{eval $mnid = getcurrentnav();}-->
+						<h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
+						<!--{loop $_G['setting']['navs'] $nav}-->
+							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
+						<!--{/loop}-->
+					</ul>
+					<!--{hook/global_nav_extra}-->
+				</div>
+				<!--{ad/subnavbanner/a_mu}-->
 			</div>
 		<div class="col-md-9" style="position: unset;">
 			<div id="wp" class="wp">
+				<div class="p-3">
+					<!--{template common/header_userstatus}-->
+				</div>

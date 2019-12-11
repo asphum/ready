@@ -7,9 +7,35 @@
     max-width: 100% !important;
 }
 @media (max-width: 959px) {
-	html {font-size: 60% !important;}
+
 	
  }
+ .imgavatarhead {
+    text-align: center;
+ }
+ .imgavatarhead img {
+    border-radius: 10px !important;
+    width: auto;
+    background: transparent;
+    max-width: 100%;
+    padding: 5px;
+ }
+ .card-profile{
+     padding: 3px 5px;
+     display: block;
+     text-decoration: none;
+     border: 1px solid #EEE;
+     border-radius: 4px !important;
+     width: 100%;
+     margin: 5px;
+     font-size: 1.2rem;
+     font-weight: 600;
+ }
+ .card-profile:hover {
+    background: #333 !important;
+    color: #FFF;
+    text-decoration: none;
+}
 .mainmenu {
     padding: 10px;
 }
@@ -22,6 +48,7 @@
     font-weight: 600;
     text-decoration: none;
     display: block;
+    font-family: {FONT} !important;
 }
 .activemenu, .mainmenu ul li a:hover {
     color: #333 !important;
@@ -36,4 +63,6 @@
     padding: 0 10px;
     display: table-footer-group;
     font-size: 1.2rem;
+    font-family: {FONT} !important;
 }
+
