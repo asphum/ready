@@ -624,7 +624,7 @@
 */
 	.vwthd { padding-right: 80px !important; }
 		.vwthd div.y { display: inline; margin-right: -60px; }
-		.ts { display: inline; font: 700 16px 'Microsoft Yahei', 'Hei', Tahoma, 'SimHei', sans-serif; }
+		.ts { display: inline; font: 700 20px {FONT}; text-shadow: 1px 1px 0 #000; color: #FFF;}
 
 #nv_forum #ct { border-color: {SPECIALBORDER}; }
 

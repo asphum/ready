@@ -2,9 +2,12 @@ html {
     font-size: 90% !important;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) !important;
     font-family: {FONT} !important;
+
 }
 body {
     font-family: {FONT} !important;
+    background-image: url({IMGDIR}/bg/codepen.svg);
+    background-color: #31CC70;
 }
 
 h1, h2, h3, h4, h5, h6, span {font-family: {FONT} !important;}
@@ -39,3 +42,15 @@ h1, h2, h3, h4, h5, h6, span {font-family: {FONT} !important;}
     text-shadow: 1px 1px 2px #000000aa;
     color: #fff;
 }
+
+#ft {
+    border-top: 5px solid #000;
+    line-height: 1.5;
+    color: #FFF;
+}
+.tedt {
+    border: none;
+}
+
+.pi strong a { float: right; margin-top: -6px; padding: 4px 6px; font-size: 1rem; text-decoration: none; border: 0 !important; font-weight: 500 !important; color: #2eba67; }
+    .pi strong a:hover { color: red !important; border: none !important; }

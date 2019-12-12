@@ -1,3 +1,6 @@
+.wp {
+    background: #FFF;
+}
 #avatardesigner {
     border: 1px solid #CCC;
     padding: 0px !important;
@@ -30,6 +33,7 @@
      margin: 5px;
      font-size: 1.2rem;
      font-weight: 600;
+     background: #FFF;
  }
  .card-profile:hover {
     background: #333 !important;
@@ -48,7 +52,7 @@
     font-weight: 600;
     text-decoration: none;
     display: block;
-    font-family: {FONT} !important;
+    text-shadow: 1px 1px 0 #61d891;
 }
 .activemenu, .mainmenu ul li a:hover {
     color: #333 !important;
@@ -56,13 +60,28 @@
 
 .activemenu, .mainmenu ul li:hover {
     border: none;
-    border-radius: 14px;
-    background-color: #eeeeee;
+    border-radius: 10px;
+    background-color: #ffffff5c;
 }
 .mainmenu ul li a span {
     padding: 0 10px;
     display: table-footer-group;
     font-size: 1.2rem;
-    font-family: {FONT} !important;
 }
 
+#threadstamp img {
+    position: absolute;
+    top: 20px;
+    max-width: 100px;
+    right: 10%;
+}
+.bgcontent {
+    background-color: #FFF;
+    border-radius: 6px;
+}
+.px, .pt, .ps, select {
+    border: 1px solid #DDD;
+    background: #FFF;
+    color: #000;
+    border-radius: 4px;
+}

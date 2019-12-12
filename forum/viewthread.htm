@@ -24,7 +24,7 @@
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 </div>
 
-<div id="ct" class="wp cl ">
+<div id="ct" class="cl">
 
 
 <!--{if $_G['group']['allowpost'] && ($_G['group']['allowposttrade'] || $_G['group']['allowpostpoll'] || $_G['group']['allowpostreward'] || $_G['group']['allowpostactivity'] || $_G['group']['allowpostdebate'] || $_G['setting']['threadplugins'] || $_G['forum']['threadsorts'])}-->
@@ -133,7 +133,7 @@
 <div id="postlist" >
 	<table class="table table-borderless" cellspacing="0" cellpadding="0">
 		<tr>
-			<td class="plc ptm pbn vwthd">
+			<td class="plc ptm pbn">
 
 				<h1 class="ts">
 					<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
@@ -169,7 +169,6 @@
 					<!--{if $_G['forum_thread']['closed'] == 1}-->
 						&nbsp;<img src="{IMGDIR}/locked.gif" alt="{lang close}" title="{lang close}" class="vm" />
 					<!--{/if}-->
-					<a href="forum.php?mod=viewthread&tid=$_G[tid]$fromuid" onclick="return copyThreadUrl(this, '$_G[setting][bbname]')" {if $fromuid}title="{lang share_url_copy_comment}"{/if}>[{lang share_url_copy}]</a>
 				</span>
 				<!--{hook/viewthread_title_extra}-->
 			</td>
@@ -269,17 +268,6 @@ $_G['forum_tagscript']
 <!--{eval $nxtpage = $page + 1;}-->
 	<div class="pgbtn"><a href="forum.php?mod=viewthread&tid=$_G[tid]{if $_GET[authorid]}&authorid=$_GET[authorid]{/if}&page=$nxtpage" hidefocus="true" class="bm_h">{lang next_page_extra}</a></div>
 <!--{/if}-->
-
-<div class="pgs mtm mbm cl">
-	$multipage
-	<span class="pgb y"{if $_G['setting']['visitedforums']} id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"{/if}><a href="$upnavlink">{lang return_forumdisplay}</a></span>
-	<!--{if !$_G['forum_thread']['is_archived']}-->
-		<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a>
-	<!--{/if}-->
-	<!--{if $allowpostreply && !$_G['forum_thread']['archiveid']}-->
-		<a id="post_replytmp" onclick="showWindow('reply', 'forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]')" href="javascript:;" title="{lang reply}"><img src="{IMGDIR}/pn_reply.png" alt="{lang reply}" /></a>
-	<!--{/if}-->
-</div>
 
 <!--{hook/viewthread_middle}-->
 <!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->

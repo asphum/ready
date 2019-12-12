@@ -40,7 +40,7 @@
 			<item id="fontsize"><![CDATA[16px/1.5]]></item>
 			<item id="font"><![CDATA['Sarabun', sans-serif]]></item>
 			<item id="styleimgdir"><![CDATA[]]></item>
-			<item id="imgdir"><![CDATA[]]></item>
+			<item id="imgdir"><![CDATA[template/ready/images]]></item>
 			<item id="boardimg"><![CDATA[logo.png]]></item>
 			<item id="available"><![CDATA[]]></item>
 			<item id="headertext"><![CDATA[#444]]></item>

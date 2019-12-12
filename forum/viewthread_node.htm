@@ -14,7 +14,7 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 	<div id="threadstamp"><img src="{STATICURL}image/stamp/$_G[forum_threadstamp][url]" title="$_G[forum_threadstamp][text]" /></div>
 <!--{/if}-->
 <!--{if empty($post['deleted'])}-->
-<table id="pid$post[pid]" class="table table-borderless" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
+<table id="pid$post[pid]" class="table table-borderless bgcontent" summary="pid$post[pid]" cellspacing="0" cellpadding="0">
 <tr>
 	$post[newpostanchor] $post[lastpostanchor]
 
@@ -32,7 +32,7 @@ $postshowavatars = !($_G['setting']['bannedmessages'] & 2 && ($post['memberstatu
 							{lang recommend}
 						<!--{else}-->
 							<!--{if !empty($postno[$post[number]])}-->
-								$postno[$post[number]]
+							<i style="font-size: 2rem;" class="fas fa-copy"></i>
 							<!--{else}-->
 								<em>{$post[number]}</em>{$postno[0]}
 							<!--{/if}-->
