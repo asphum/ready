@@ -461,8 +461,8 @@
 		.alert_act { margin-top: 20px; padding-left: 58px; }
 
 /* 发帖导航 by lushnis */
-.pbnv { float: left; white-space: nowrap; overflow: hidden; width: 400px; padding: 7px 0; }
-.pbl { overflow: hidden; margin: 9px 0; width: 621px; border-width: 1px 0 1px 1px; border-style: solid; border-color: #CCC; background: {WRAPBG}; }
+.pbnv { float: left; white-space: nowrap; overflow: hidden; max-width: 400px; padding: 7px 0; }
+.pbl { overflow: hidden; margin: 9px 0; max-width: 621px; border-width: 1px 0 1px 1px; border-style: solid; border-color: #CCC; background: {WRAPBG}; }
 	.pbl li { float: left; overflow-x: hidden; overflow-y: auto; padding: 5px; width: 196px; height: 300px; border-right: 1px solid #CCC; }
 	.pbl p { height: 25px; line-height: 25px; }
 		.pbl a { display: block; white-space: nowrap; overflow: hidden; padding: 0 4px; text-decoration: none; color: {HIGHLIGHTLINK}; border: solid {WRAPBG}; border-width: 1px 0; }
@@ -512,7 +512,7 @@
 			#scbar { overflow: hidden; height: 42px; line-height: 42px; border-top: 1px solid #FFF; border-bottom: 1px solid #E9EFF5; background: #E8EFF5; }
 				.scbar_icon_td { width: 21px; background: url({IMGDIR}/search.png) no-repeat 0 -50px; }
 				.scbar_txt_td, .scbar_type_td { background: url({IMGDIR}/search.png) repeat-x 0 -93px; }
-					#scbar_txt { width: 400px; border: 1px solid #FFF; outline: none; }
+					#scbar_txt { max-width: 400px; border: 1px solid #FFF; outline: none; }
 					.scbar_narrow #scbar_txt { width: 260px; }
 				.scbar_btn_td { width: 38px; background: url({IMGDIR}/search.png) no-repeat 8px -142px; }
 					#scbar_btn { margin: 0; padding: 0; border: none; background: transparent none; box-shadow: none; }
@@ -566,7 +566,7 @@
 				#qmenu { float: right; display: inline; margin: 5px 8px 0; padding-right: 10px; width: 103px; height: 24px; background: url({IMGDIR}/qmenu.png) no-repeat 0 0; line-height: 24px; text-align: center; color: {HIGHLIGHTLINK}; font-weight: 700; overflow: hidden; }
 					#qmenu:hover { text-decoration: none; }
 					#qmenu.a { position: relative; z-index: 302; background-position: 0 -27px; }
-				#qmenu_menu { margin-top: -2px; padding: 20px 5px 10px; width: 610px; border-color: #DCE4EB; }
+				#qmenu_menu { margin-top: -2px; padding: 20px 5px 10px; max-width: 610px; border-color: #DCE4EB; }
 					#qmenu_menu ul.nav li { float: left; }
 						.ie6 #qmenu_menu ul.nav li { clear: none !important; width: auto !important; }
 					#qmenu_menu ul.nav a { margin-bottom: 10px; padding: 47px 0 0; width: 60px; border: none; border-radius: 4px; background: url({IMGDIR}/noicon.gif) no-repeat 50% 5px; text-align: center; }
@@ -586,7 +586,7 @@
 #nv li.a .icon_down {background: url({IMGDIR}/arr_w.gif) no-repeat  50% 50%; display:inline-block; width:12px; height:12px; overflow:hidden; margin-left:3px; }
 .ie6 #nv li.a .icon_down {height:24px;vertical-align: middle;}
 #mn_userapp_menu { clear: left; min-height: 210px; min-width: 630px; }
-.ie6 #mn_userapp_menu { height: 210px; width: 630px; }
+.ie6 #mn_userapp_menu { height: 210px; max-width: 630px; }
 	#mn_userapp_menu ul.mrec{ float:left; width:182px; padding-right:5px; border-right:1px dotted {DROPMENUBORDER}; }
 	#mn_userapp_menu ul.uused { float:left; width:273px; }
 	.ie6 #mn_userapp_menu ul.mrec, .ie7 #mn_userapp_menu ul.mrec { width:182px; padding:0 5px 0 0; }
@@ -611,8 +611,8 @@
 		.ie6 #ct { height: 300px; }
 		.mn { overflow: hidden; }
 		.ct1 { border: 1px solid {WRAPBORDERCOLOR}; border-top: none; }
-		.ct2 .mn { float: left; width: 730px; margin-bottom: 1em; }
-		.ct2 .sd { float: right; width: 220px; overflow: hidden; _overflow-y: visible; }
+		.ct2 .mn { float: left; max-width: 730px; margin-bottom: 1em; }
+		.ct2 .sd { float: right; max-width: 220px; overflow: hidden; _overflow-y: visible; }
 
 		.appl { float: left; overflow: hidden; margin-bottom: 10px; padding: 6px 10px; width: 117px; }
 
@@ -620,18 +620,18 @@
 			.ct2_a_r { border: none; background-image: none; }
 			 .ct2_a h1.mt { display: none; }
 			 .ct2_a .tb { margin-top: 3px; }
-		.ct2_a .mn { float: right; width: 810px; }
-			.ct2_a .mn { display: inline; margin-right: 10px; padding-top: 10px; width: 800px; }
-				#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; width: 810px; }
+		.ct2_a .mn { float: right; max-width: 810px; }
+			.ct2_a .mn { display: inline; margin-right: 10px; padding-top: 10px; max-width: 800px; }
+				#nv_userapp .ct2_a .mn, .ct2_a_r .mn { margin-right: 0; max-width: 810px; }
 
-		.ct3_a .mn { float: left; margin-left: 20px; width: 565px; }
+		.ct3_a .mn { float: left; margin-left: 20px; max-width: 565px; }
 		.ct3_a .sd { float: right; width: 220px; }
 			#nv_home .ct3_a .sd .bm { margin-right: 10px; border: none; }
 				#nv_home .ct3_a .sd .bm_c { padding: 10px 0; }
 
 		.mw { width: 100%; float: none; }
 		.mnw { clear: both; border-top: 1px solid #CCC; }
-		.mnh { width: 643px; background: {COMMONBG}; margin-bottom: 0; }
+		.mnh { max-width: 643px; background: {COMMONBG}; margin-bottom: 0; }
 
 /* 页尾 */
 	#ft { padding: 10px 0 50px; border-top: 1px solid {COMMONBORDER}; line-height: 1.8; color: {FOOTERTEXT}; }
@@ -948,7 +948,7 @@
 		.tedt .area { padding: 4px; background: {WRAPBG}; zoom: 1; }
 		.tedt .pt { width: 100%; margin-right: 0; padding: 0 !important; border: none; background: {WRAPBG} none; }
 			.tedt .pt:focus { outline: none; -moz-box-shadow: none; }
-	.m_c .tedt { width: 600px; }
+	.m_c .tedt { max-width: 600px; }
 
 /* 表情 */
 .sllt { padding: 10px 5px 5px !important; }
@@ -987,7 +987,7 @@
 	.p_pop, .p_pof, .sllt { padding: 4px; border: 1px solid; min-width: 60px; border-color: {DROPMENUBORDER}; {DROPMENUBGCODE}; box-shadow: 1px 2px 2px rgba(0,0,0,0.3); }
 		.ie6 .p_pop { width: 100px; }
 		.p_pof .p_pop { padding: 0; border: none; box-shadow: none; }
-		.p_pof { width: 500px; }
+		.p_pof { max-width: 500px; }
 		.p_opt { padding: 10px; }
 		.p_pop li { display: inline; }
 		.p_pop a { display: block; padding: 3px 5px; border-bottom: 1px solid {SPECIALBG}; white-space: nowrap; }
@@ -1009,7 +1009,7 @@
 		.blk a, .inlinelist a { display: inline; padding: 0; border: none; }
 			.blk a:hover { background: none; color: {LINK}; text-shadow: none; text-decoration: underline; }
 		.inlinelist { padding: 5px; }
-			.inlinelist a { float: left; width: 5em; height: 2em; overflow: hidden; text-align: center; line-height: 2em; }
+			.inlinelist a { float: left; max-width: 5em; height: 2em; overflow: hidden; text-align: center; line-height: 2em; }
 	.h_pop { min-width: 120px; border-top: none; }
 /* .txt 和 .textarea 属于旧的命名规范，待整理 by lushnis */.p_opt .txt, .p_opt .txtarea { margin: 5px 0; }
 
@@ -1036,7 +1036,7 @@
 	.m_c .c { padding: 0 10px 10px; }
 	.m_c .o { padding: 8px 10px; height: 26px; text-align: right; border-top: 1px solid #CCC; background: {COMMONBG}; }
 		/* 分享时会用到 */
-	.m_c .el { width: 420px; }
+	.m_c .el { max-width: 420px; }
 		.m_c .el li { padding: 0; border: none; }
 
 /* .flb 弹出层header */
@@ -1060,7 +1060,7 @@
 			.f_c li { list-style: none; }
 			.f_c hr.l { margin: 0; }
 			.f_c a { color: {HIGHLIGHTLINK}; }
-			.f_c .list { margin: 0 auto 10px; width: 570px; border-top: 3px solid {COMMONBORDER}; }
+			.f_c .list { margin: 0 auto 10px; max-width: 570px; border-top: 3px solid {COMMONBORDER}; }
 				.f_c .list th, .f_c .list td { padding: 5px 2px; height: auto; border-bottom: 1px dashed {COMMONBORDER}; }
 				.f_c .list .btns th, .f_c .list .btns td { border-bottom: none; }
 				.f_c .th th, .f_c .th td { padding: 10px 0; }
@@ -1068,7 +1068,7 @@
 
 /* 弹窗未开启时 nofloat */
 .nfl { height: auto !important; height: 320px; min-height: 320px; }
-	.nfl .f_c { margin: 60px auto; padding: 20px; width: 580px; border: 3px solid {COMMONBG}; background: {WRAPBG}; }
+	.nfl .f_c { margin: 60px auto; padding: 20px; max-width: 580px; border: 3px solid {COMMONBG}; background: {WRAPBG}; }
 	.nfl .loginform { height: auto; }
 	.nfl .clause { width: auto; height: auto; }
 
@@ -1093,7 +1093,7 @@
 .colorbox input { float: left; margin: 2px; padding: 0; width: 12px; height: 12px; border: 0; cursor: pointer; }
 
 /*弹窗 编辑器 分割线选择 hrbox*/
-.hrbox{ width: 500px !important; }
+.hrbox{ max-width: 500px !important; }
 .hrbox input { float: left; margin: 2px; padding: 0; width: 495px; height: 25px; border: 0; cursor: pointer;background: #FFFFFF; }
 
 /*弹窗 编辑器 背景选择 postbgbox*/
@@ -1101,7 +1101,7 @@
 .postbgbox input { float: left; margin: 2px; padding: 0; width: 50px; height: 50px; border: 1px solid; border-color: #F7F7F7 #EFEFEF #EFEFEF #F7F7F7; cursor: pointer;background: #FFFFFF; }
 
 /* 短消息对话框 .pm -> personal_message (window) by Pony */
-	.pm { overflow: hidden; width: 400px; }
+	.pm { overflow: hidden; max-width: 400px; }
 		.pm .flb { margin-bottom: 0; padding: 1px 5px 4px; background: #CCC url({IMGDIR}/pm.png) repeat-x 0 -101px; }
 			* html .pm .flb { padding: 4px 5px 1px; }
 			.pm .flb em { padding-left: 15px; background: url({IMGDIR}/pm.png) no-repeat 0 -65px; text-shadow: 1px 1px 1px {WRAPBG}; color: {LINK}; font-size: 12px; }
@@ -1157,12 +1157,12 @@
 
 /* 登录和注册 */
 
-.rfm { margin: 0 auto; width: 760px; border-bottom: 1px dotted {COMMONBORDER}; }
+.rfm { margin: 0 auto; max-width: 760px; border-bottom: 1px dotted {COMMONBORDER}; }
 		.rfm a { color: {HIGHLIGHTLINK}; }
 		.rfm .rq {}
 		.rfm th, .rfm td { padding: 10px 2px; vertical-align: top; line-height: 24px; }
 			.rfm .tipwide { padding-top: 0; }
-		.rfm th { padding-right: 10px; width: 10em; text-align: right; }
+		.rfm th { padding-right: 10px; max-width: 10em; text-align: right; }
 		.rfm .px { width: 220px; }
 			.rfm .px:focus { border-color: {HIGHLIGHTLINK}; background: #FFF; }
 		.rfm .p_tip { position: absolute; z-index: 2; display: none; padding-left: 10px; width: 390px; background: {WRAPBG}; color: {MIDTEXT}; font-style: normal; }
@@ -1174,7 +1174,7 @@
 		.rfm .l { margin: 0; }
 	.blr .c { padding: 0 10px 10px; }
 	.login_slct a { margin-right: -8px; padding-right: 16px; background: url({IMGDIR}/arrwd.gif) no-repeat 100% 50%; }
-	.fwin .rfm, .nfl .f_c .rfm { width: 500px; }
+	.fwin .rfm, .nfl .f_c .rfm { max-width: 500px; }
 	.fwin .rfm th, .fwin .rfm td, .nfl .f_c .rfm th, .nfl .f_c .rfm td { padding: 6px 2px; }
 	.fwin .loginb button { margin-left: 11.3em; }
 	.nfl .f_c .loginb button { margin-left: 12em; }
@@ -1190,7 +1190,7 @@
 	.passlevel2 { background-position: 0 -75px; }
 	.passlevel3 { background-position: 0 -115px; }
 
-.blr { width: 580px; margin: 20px auto 30px; }
+.blr { max-width: 580px; margin: 20px auto 30px; }
 	.m_c .blr { margin: 0 auto; }
 .lgfm { font: {FONTSIZE} {FONT}; float: left; margin-bottom: 10px; *margin-bottom: -10px; padding: 20px 0; width: 280px; border-right: 1px solid #CCC; }
 	.rgs { margin-bottom: 10px; }
@@ -1208,7 +1208,7 @@
 		.lgfm em, .fsb em { float: left; width: 60px; }
 			.fsb .pnr { *margin-top: 4px; }
 .nlf .txt{ width: 230px; }
-.brls { overflow: auto; margin-bottom: 10px; width: 470px; height: 240px; }
+.brls { overflow: auto; margin-bottom: 10px; max-width: 470px; height: 240px; }
 .sipt { float: none; margin: 0 0 10px; width: 234px; height: 20px; background-color: {WRAPBG}; border: 1px solid; border-color: {INPUTBORDERDARKCOLOR} {INPUTBORDER} {INPUTBORDER} {INPUTBORDERDARKCOLOR}; clear: left; }
 	.sipt a { float: left; width: 54px; border: none; }
 		.sipt a:hover, .sipt a:focus { border: none; }
@@ -1376,7 +1376,7 @@
 .reason_slct {}
 	.reason_slct .reasonselect { height: 4.3em; overflow: scroll !important; overflow-x: auto !important; }
 		.reason_slct .reasonselect li { white-space: nowrap; }
-	.reason_slct .pt, .reason_slct .px { width: 25.2em !important; }
+	.reason_slct .pt, .reason_slct .px { max-width: 25.2em !important; }
 	.reasonarea { height: 5.8em; }
 	.reason_slct .reasonselect:hover { height:auto; }
 
@@ -1632,7 +1632,7 @@ em.hot { position: absolute; left: -2px; top: -2px; text-indent: -9999px; overfl
 	.card a { padding: 0; display: inline !important; white-space: normal; border-bottom: none; }
 		.card a:hover { background-color: transparent !important; color: {TABLETEXT}; text-shadow: none; }
 	.card .o { clear: both; padding: 5px 10px; }
-		.card .o a { float: left; margin: 3px 5px 3px 0; padding: 2px 0; width: 5em; border: 1px solid {SPECIALBORDER}; background: {SPECIALBG} url({IMGDIR}/card_btn.png) repeat-x 0 100%; line-height: 14px; text-align: center; }
+		.card .o a { float: left; margin: 3px 5px 3px 0; padding: 2px 0; max-width: 5em; border: 1px solid {SPECIALBORDER}; background: {SPECIALBG} url({IMGDIR}/card_btn.png) repeat-x 0 100%; line-height: 14px; text-align: center; }
 		.ie_all .card .o a { padding: 3px 0 0; }
 	.card .mgc, .card .f { padding: 0 10px 5px; }
 		.card .f li { display: block; }

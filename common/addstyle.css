@@ -1,5 +1,11 @@
 .wp {
     background: #FFF;
+    border: none;
+    border-radius: 6px;
+}
+a:hover {
+    text-decoration: none !important;
+    color: red;
 }
 #avatardesigner {
     border: 1px solid #CCC;
@@ -9,14 +15,21 @@
 .t_f img {
     max-width: 100% !important;
 }
-@media (max-width: 959px) {
+@media(max-width: 576px){
 
-	
- }
- .imgavatarhead {
+    
+}
+ .fl_icn_g a img, .fl_icn_g a i {
+    max-width: 100%;
+}
+.fl_icn a img, .fl_icn a i {
+    max-width: 100%;
+    width: 100px;
+}
+.imgavatarhead {
     text-align: center;
  }
- .imgavatarhead img {
+.imgavatarhead img {
     border-radius: 10px !important;
     width: auto;
     background: transparent;
@@ -39,6 +52,20 @@
     background: #333 !important;
     color: #FFF;
     text-decoration: none;
+}
+.statusbord {
+    padding: 3px;
+    background-color: #ffffff5c;
+    border-radius: 6px 6px 0 0;
+}
+.card-statusbord{
+    padding: 3px 5px;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+
 }
 .mainmenu {
     padding: 10px;
@@ -78,10 +105,86 @@
 .bgcontent {
     background-color: #FFF;
     border-radius: 6px;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 .px, .pt, .ps, select {
     border: 1px solid #DDD;
     background: #FFF;
     color: #000;
     border-radius: 4px;
+}
+.iconusermenu {
+    color:Tomato;
+    margin-right: 3px;
+}
+
+
+/* Responsive table
+ ========================================================================== */
+/* Phone landscape and smaller */
+@media (max-width: 959px) {
+    .uk-table-responsive,
+    .uk-table-responsive tbody,
+    .uk-table-responsive th,
+    .uk-table-responsive td,
+    .uk-table-responsive tr {
+      display: block;
+    }
+    .uk-table-responsive thead {
+      display: none;
+    }
+    .uk-table-responsive th,
+    .uk-table-responsive td {
+      width: auto !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a {
+      padding-top: 5px !important;
+    }
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a {
+      padding-bottom: 5px !important;
+    }
+    .uk-table-justify.uk-table-responsive th,
+    .uk-table-justify.uk-table-responsive td {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .uk-table tbody tr {
+    transition: background-color 0.1s linear;
+  }
+
+.data_info {
+
+    padding: .5rem!important;
+}
+.data_info h2 {
+    font-weight: 700;
+}
+.data_info p {
+    font-size: 14px;
+    color: #000;
+}
+.img_cont img {
+    width: 100%;
+    border: none;
+}
+.fl_i {
+    width: auto;
+    padding: 10px;
+    text-align: left;
+}
+.fl, .bm {
+    border: none;
+}
+.bmw .bm_h a {
+    font-size: 1.4rem;
+    font-weight: 700;
 }

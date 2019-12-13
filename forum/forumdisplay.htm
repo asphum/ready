@@ -34,7 +34,7 @@
 		<div class="mn">
 			<div class="bm bml pbn">
 				<!--{if $_G[forum][banner] && !$subforumonly}--><img src="$_G[forum][banner]" alt="$_G['forum'][name]" /><!--{/if}-->
-				<div class="bm_h cl">
+				<div class="bm_h cl d-none d-md-block">
 					<!--{if $_G['page'] == 1 && $_G['forum']['rules']}--><span class="o"><img id="forum_rules_{$_G[fid]}_img" src="{IMGDIR}/collapsed_{$collapse[forum_rulesimg]}.gif" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('forum_rules_{$_G[fid]}')" /></span><!--{/if}-->
 					<span class="y">
 						<a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">{lang forum_favorite} <strong class="xi1" id="number_favorite" {if !$_G[forum][favtimes]} style="display:none;"{/if}>(<span id="number_favorite_num">$_G[forum][favtimes]</span>)</strong></a>
@@ -398,7 +398,7 @@
 				<!--{/if}-->
 
 				<div id="pgt" class="bm bw0 pgs cl">
-					<!--{if !$_GET['archiveid']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="btn btn-primary">{lang send_posts}</a><!--{/if}-->
+					<!--{if !$_GET['archiveid']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a><!--{/if}-->
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 				<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
