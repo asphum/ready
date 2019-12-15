@@ -3,7 +3,7 @@
 		<!--{subtemplate forum/search_sortoption}-->
 	<!--{/if}-->
 	<div class="th">
-		<table cellspacing="0" cellpadding="0">
+		<table class="hsmall" cellspacing="0" cellpadding="0">
 			<tr>
 				<th colspan="{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}3{else}2{/if}">
 				<!--{if CURMODULE != 'guide'}-->
@@ -59,9 +59,9 @@
 		<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&action=moderate&fid=$_G[fid]&infloat=yes&nopost=yes">
 			<input type="hidden" name="formhash" value="{FORMHASH}" />
 			<input type="hidden" name="listextra" value="$extra" />
-			<table summary="forum_$_G[fid]" cellspacing="0" cellpadding="0" id="threadlisttableid">
+			<table class="uk-table-responsive" summary="forum_$_G[fid]" cellspacing="0" cellpadding="0" id="threadlisttableid">
 				<!--{if (!$simplestyle || !$_G['forum']['allowside'] && $page == 1) && !empty($announcement)}-->
-					<tbody>
+					<tbody class="hsmall">
 						<tr>
 							<td class="icn"><img src="{IMGDIR}/ann_icon.gif" alt="{lang announcement}" /></td>
 							<!--{if $_G['forum']['ismoderator'] && !$_GET['archiveid']}--><td class="o">&nbsp;</td><!--{/if}-->
@@ -76,7 +76,7 @@
 					</tbody>
 				<!--{/if}-->
 				<!--{if !$separatepos || !$_G['setting']['forumseparator']}-->
-					<tbody id="separatorline" class="emptb"><tr><td class="icn"></td><!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}--><td class="o"></td><!--{/if}--><th></th><!--{if CURMODULE == 'guide'}--><td class="by"></td><!--{/if}--><td class="by"></td><td class="num"></td><td class="by"></td></tr></tbody>
+					<tbody id="separatorline" class="emptb hsmall"><tr><td class="icn"></td><!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}--><td class="o"></td><!--{/if}--><th></th><!--{if CURMODULE == 'guide'}--><td class="by"></td><!--{/if}--><td class="by"></td><td class="num"></td><td class="by"></td></tr></tbody>
 				<!--{/if}-->
 				<!--{if $_G['forum_threadcount']}-->
 					<!--{if empty($_G['forum']['picstyle']) || $_G['cookie']['forumdefstyle']}-->
@@ -96,7 +96,7 @@
 							<!--{/if}-->
 							<tbody id="$thread[id]"{if $_G['hiddenexists'] && $thread['hidden']} style='display:none'{/if}>
 								<tr>
-									<td class="icn">
+									<td class="icn hsmall">
 										<a href="forum.php?mod=viewthread&tid=$thread[icontid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra" title="{if $thread['displayorder'] == 1}{lang thread_type1} - {/if}
 											{if $thread['displayorder'] == 2}{lang thread_type2} - {/if}
 											{if $thread['displayorder'] == 3}{lang thread_type3} - {/if}
@@ -107,7 +107,7 @@
 											{if $thread['special'] == 3}{lang thread_reward} - {/if}
 											{if $thread['special'] == 4}{lang thread_activity} - {/if}
 											{if $thread['special'] == 5}{lang thread_debate} - {/if}
-											{if $thread[folder] == "new"}{lang have_newreplies} - {/if}
+											{if $thread[folder] == "new p-1"}{lang have_newreplies} - {/if}
 											{lang target_blank}" target="_blank">
 										<!--{if $thread[folder] == 'lock'}-->
 											<img src="{IMGDIR}/folder_lock.gif" />
@@ -141,7 +141,7 @@
 										<!--{/if}-->
 									</td>
 									<!--{/if}-->
-									<th class="$thread[folder]">
+									<th class="$thread[folder] p-1">
 										<a href="javascript:;" id="content_$thread[tid]" class="showcontent y" title="{lang content_actions}" onclick="CONTENT_TID='$thread[tid]';CONTENT_ID='$thread[id]';showMenu({'ctrlid':this.id,'menuid':'content_menu'})"></a>
 										<!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}-->
 											<a href="javascript:void(0);" onclick="hideStickThread('$thread[tid]')" class="showhide y" title="{lang hidedisplayorder}">{lang hidedisplayorder}</a></em>
@@ -225,9 +225,9 @@
 										<!--{/if}-->
 									</th>
 									<!--{if CURMODULE == 'guide'}-->
-										<td class="by"><a href="forum.php?mod=forumdisplay&fid=$thread[fid]" target="_blank">$forumnames[$thread[fid]]['name']</a></td>
+										<td class="by hsmall"><a href="forum.php?mod=forumdisplay&fid=$thread[fid]" target="_blank">$forumnames[$thread[fid]]['name']</a></td>
 									<!--{/if}-->
-									<td class="by">
+									<td class="by hsmall">
 										<!--{hook/forumdisplay_author $key}-->
 										<cite>
 										<!--{if $thread['authorid'] && $thread['author']}-->
@@ -238,8 +238,8 @@
 										</cite>
 										<em><span{if $thread['istoday']} class="xi1"{/if}>$thread[dateline]</span></em>
 									</td>
-									<td class="num"><a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" class="xi2">$thread[allreplies]</a><em><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></em></td>
-									<td class="by">
+									<td class="num hsmall"><a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" class="xi2">$thread[allreplies]</a><em><!--{if $thread['isgroup'] != 1}-->$thread[views]<!--{else}-->{$groupnames[$thread[tid]][views]}<!--{/if}--></em></td>
+									<td class="by hsmall">
 										<cite><!--{if $thread['lastposter']}--><a href="{if $thread[digest] != -2}home.php?mod=space&username=$thread[lastposterenc]{else}forum.php?mod=viewthread&tid=$thread[tid]&page={echo max(1, $thread[pages]);}{/if}" c="1">$thread[lastposter]</a><!--{else}-->$_G[setting][anonymoustext]<!--{/if}--></cite>
 										<em><a href="{if $thread[digest] != -2 && !$thread[ordertype]}forum.php?mod=redirect&tid=$thread[tid]&goto=lastpost$highlight#lastpost{else}forum.php?mod=viewthread&tid=$thread[tid]{if !$thread[ordertype]}&page={echo max(1, $thread[pages]);}{/if}{/if}">$thread[lastpost]</a></em>
 									</td>
@@ -252,7 +252,8 @@
 						<!--{/if}-->
 					<!--{else}-->
 						</table><!-- end of table "forum_G[fid]" branch 2/3 -->
-						<ul id="waterfall" class="ml waterfall cl">
+
+						<div id="waterfall" class="row row-cols-2 row-cols-md-3 no-gutters">
 							<!--{loop $_G['forum_threadlist'] $key $thread}-->
 							<!--{if $_G['hiddenexists'] && $thread['hidden']}-->
 								<!--{eval continue;}-->
@@ -263,48 +264,41 @@
 								<!--{/if}-->
 							<!--{/if}-->
 							<!--{eval $waterfallwidth = $_G[setting][forumpicstyle][thumbwidth] + 24; }-->
-							<li style="width:{$waterfallwidth}px">
-								<!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}-->
-									<div style="position:absolute;margin:1px;padding:2px;background:#FFF">
-									<!--{if $thread['fid'] == $_G[fid]}-->
-										<!--{if $thread['displayorder'] <= 3 || $_G['adminid'] == 1}-->
-											<input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" />
+
+							<div class="col">
+								<a href="forum.php?mod=viewthread&tid=$thread[tid]" ><div class="m-2">
+									<!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}-->
+										<!--{if $thread['fid'] == $_G[fid]}-->
+											<!--{if $thread['displayorder'] <= 3 || $_G['adminid'] == 1}-->
+												<input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" style="position: absolute; z-index: 1;" />
+											<!--{else}-->
+												<input type="checkbox" disabled="disabled" style="position: absolute; z-index: 600;background-color: #DDD;" />
+											<!--{/if}-->
 										<!--{else}-->
-											<input type="checkbox" disabled="disabled" />
+											<input type="checkbox" disabled="disabled" style="position: absolute; z-index: 600;background-color: #DDD;" />
 										<!--{/if}-->
-									<!--{else}-->
-										<input type="checkbox" disabled="disabled" />
 									<!--{/if}-->
+									<div class="">
+										<div style="opacity: 0.8;padding:3px 10px;border-radius:0 0 0 6px;position: absolute; z-index: 1;right:0px;background-color: #FFF;">
+											<span style="font-size:0.8em; color:#000; font-weight:700;">อ่าน: $thread[views]</span>
+											<span style="font-size:0.8em; color:#000; font-weight:700;">ตอบ: $thread[allreplies]</span>
+											<p class="uk-text-nowrap uk-margin-remove" style="font-size:0.8em; color:#000; font-weight:700;">โดย: $thread[author]</p>
+										</div>
+											<!--{if $thread['cover']}-->
+												<img style="width: 100%;" src="$thread[coverpath]?{VERHASH}">
+											<!--{else}-->
+												<img  src="{IMGDIR}/nophoto.gif?{VERHASH}">
+											<!--{/if}-->
+										<div class="" style="padding:2px 5px; background:#000;opacity: 0.8;">
+											<span class="uk-margin-remove" style="font-size:0.8em; color:#FFF; font-weight:200;">$thread[subject]</span>
+										</div>
 									</div>
-								<!--{/if}-->
-								<div class="c cl">
-									<a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra" {if $thread['isgroup'] == 1 || $thread['forumstick'] || CURMODULE == 'guide'} target="_blank"{else} onclick="atarget(this)"{/if} title="$thread[subject]" class="z">
-										<!--{if $thread['cover']}-->
-											<img src="$thread[coverpath]" alt="$thread[subject]" width="{$_G[setting][forumpicstyle][thumbwidth]}" />
-										<!--{else}-->
-											<span class="nopic" style="width:{$_G[setting][forumpicstyle][thumbwidth]}px; height:{$_G[setting][forumpicstyle][thumbwidth]}px;"></span>
-										<!--{/if}-->
-									</a>
-								</div>
-								<h3 class="xw0">
-									<!--{hook/forumdisplay_thread $key}-->
-									<a href="forum.php?mod=viewthread&tid=$thread[tid]&{if $_GET['archiveid']}archiveid={$_GET['archiveid']}&{/if}extra=$extra"$thread[highlight]{if $thread['isgroup'] == 1 || $thread['forumstick']} target="_blank"{else} onclick="atarget(this)"{/if} title="$thread[subject]">$thread[subject]</a>
-								</h3>
-								<div class="auth cl">
-									<cite class="xg1 y">
-										{lang like}: <!--{if $thread[recommends]}-->$thread[recommends]<!--{else}-->0<!--{/if}-->
-										 &nbsp; {lang reply}: <a href="forum.php?mod=viewthread&tid=$thread[tid]&extra=$extra" title="$thread[replies] {lang reply}">$thread[replies]</a>
-									</cite>
-									<!--{hook/forumdisplay_author $key}-->
-									<!--{if $thread['authorid'] && $thread['author']}-->
-										<a href="home.php?mod=space&uid=$thread[authorid]">$thread[author]</a><!--{if !empty($verify[$thread['authorid']])}--> $verify[$thread[authorid]]<!--{/if}-->
-									<!--{else}-->
-										$_G[setting][anonymoustext]
-									<!--{/if}-->
-								</div>
-							</li>
+								</div></a>
+							</div>
+
 							<!--{/loop}-->
-						</ul>
+						</div>
+
 						<div id="tmppic" style="display: none;"></div>
 						<script type="text/javascript" src="{$_G[setting][jspath]}redef.js?{VERHASH}"></script>
 						<script type="text/javascript" reload="1">

@@ -16,7 +16,68 @@
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 </div>
 <div class="boardnav">
-	<div id="ct" class="cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
+
+	<div class="bm bml pbn hsmall">
+		<!--{if $_G[forum][banner] && !$subforumonly}--><img src="$_G[forum][banner]" alt="$_G['forum'][name]" /><!--{/if}-->
+		<div class="bm_h cl">
+			<!--{if $_G['page'] == 1 && $_G['forum']['rules']}--><span class="o"><img id="forum_rules_{$_G[fid]}_img" src="{IMGDIR}/collapsed_{$collapse[forum_rulesimg]}.gif" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('forum_rules_{$_G[fid]}')" /></span><!--{/if}-->
+			<span class="y">
+				<a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">{lang forum_favorite} <strong class="xi1" id="number_favorite" {if !$_G[forum][favtimes]} style="display:none;"{/if}>(<span id="number_favorite_num">$_G[forum][favtimes]</span>)</strong></a>
+				<!--{if rssforumperm($_G['forum']) && $_G[setting][rssstatus] && !$_GET['archiveid'] && !$subforumonly}--><span class="pipe">|</span><a href="forum.php?mod=rss&fid=$_G[fid]&auth=$rssauth" class="fa_rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a><!--{/if}-->
+				<!--{if !empty($forumarchive)}-->
+					<span class="pipe">|</span><a id="forumarchive" href="javascript:;" class="fa_achv" onmouseover="showMenu(this.id)"><!--{if $_GET['archiveid']}-->$forumarchive[$_GET['archiveid']]['displayname']<!--{else}-->{lang forum_archive}<!--{/if}--></a>
+				<!--{/if}-->
+				<!--{hook/forumdisplay_forumaction}-->
+
+				<!--{if $_G['forum']['ismoderator']}-->
+				<!--{if $_G['forum']['recyclebin']}-->
+					<span class="pipe">|</span><a href="{if $_G['adminid'] == 1}admin.php?mod=forum&action=recyclebin&frames=yes{elseif $_G['forum']['ismoderator']}forum.php?mod=modcp&action=recyclebin&fid=$_G[fid]{/if}" class="fa_bin" target="_blank">{lang forum_recyclebin}</a>
+				<!--{/if}-->
+				<!--{if $_G['forum']['ismoderator'] && !$_GET['archiveid']}-->
+					<span class="pipe">|</span><strong>
+					<!--{if $_G['forum']['status'] != 3}-->
+						<a href="forum.php?mod=modcp&fid=$_G[fid]">{lang modcp}</a>
+					<!--{else}-->
+						<a href="forum.php?mod=group&action=manage&fid=$_G[fid]">{lang modcp}</a>
+					<!--{/if}-->
+					</strong>
+				<!--{/if}-->
+				<!--{hook/forumdisplay_modlink}-->
+				<!--{/if}-->
+			</span>
+			<h1 class="xs2">
+				<a href="forum.php?mod=forumdisplay&fid=$_G[fid]">$_G['forum'][name]</a>
+				<!--{if !$subforumonly}--><span class="xs1 xw0 i">{lang index_today}: <strong class="xi1">$_G[forum][todayposts]</strong><!--{if $_G[forum][todayposts]}--><!--{if $_G[forum][todayposts] < $_G[forum][yesterdayposts]}--><b class="ico_fall">&nbsp;</b><!--{else}--><b class="ico_increase">&nbsp;</b><!--{/if}--><!--{/if}--><span class="pipe">|</span>{lang index_threads}: <strong class="xi1">$_G[forum][threads]</strong><!--{if $_G[forum][rank]}--><span class="pipe">|</span>{lang rank}: <strong class="xi1" title="{lang previous_rank}:$_G[forum][oldrank]">$_G[forum][rank]</strong><!--{if $_G[forum][rank] <= $_G[forum][oldrank]}--><b class="ico_increase">&nbsp;</b><!--{else}--><b class="ico_fall">&nbsp;</b><!--{/if}--><!--{/if}--></span><!--{/if}-->
+			</h1>
+		</div>
+		<!--{if (!empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])) || $moderatedby || ($_G['page'] == 1 && $_G['forum']['rules'])}-->
+			<div class="bm_c cl pbn">
+				<!--{if !empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])}-->
+					<div class="pbn">{lang forum_domain}: <a href="{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}" id="group_link">{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}</a></div>
+				<!--{/if}-->
+				<!--{if $moderatedby}--><div>{lang forum_modedby}: <span class="xi2">$moderatedby</span></div><!--{/if}-->
+				<!--{if $_G['page'] == 1 && $_G['forum']['rules']}-->
+					<div id="forum_rules_{$_G[fid]}" style="$collapse['forum_rules'];">
+						<div class="ptn xg2">$_G['forum'][rules]</div>
+					</div>
+				<!--{/if}-->
+			</div>
+		<!--{/if}-->
+		<!--{if !empty($forumarchive)}-->
+			<div id="forumarchive_menu" class="p_pop" style="display:none">
+				<ul>
+					<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]">{lang threads_all}</a></li>
+					<!--{loop $forumarchive $id $info}-->
+					<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&archiveid=$id">{$info['displayname']} ({$info['threads']})</a></li>
+					<!--{/loop}-->
+				</ul>
+			</div>
+		<!--{/if}-->
+	</div>
+
+	<!--{hook/forumdisplay_top}-->
+
+	<div id="ct" class="row">
 		<!--{if $leftside}-->
 			<div id="sd_bdl" class="bdl" onmouseover="showMenu({'ctrlid':this.id, 'pos':'dz'});" style="width:{$_G['setting']['leftsidewidth']}px;margin-left:-{$_G['leftsidewidth_mwidth']}px">
 				<!--{hook/forumdisplay_leftside_top}-->
@@ -30,70 +91,9 @@
 				<!--{hook/forumdisplay_leftside_bottom}-->
 			</div>
 		<!--{/if}-->
-
-		<div class="mn">
-			<div class="bm bml pbn">
-				<!--{if $_G[forum][banner] && !$subforumonly}--><img src="$_G[forum][banner]" alt="$_G['forum'][name]" /><!--{/if}-->
-				<div class="bm_h cl d-none d-md-block">
-					<!--{if $_G['page'] == 1 && $_G['forum']['rules']}--><span class="o"><img id="forum_rules_{$_G[fid]}_img" src="{IMGDIR}/collapsed_{$collapse[forum_rulesimg]}.gif" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('forum_rules_{$_G[fid]}')" /></span><!--{/if}-->
-					<span class="y">
-						<a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">{lang forum_favorite} <strong class="xi1" id="number_favorite" {if !$_G[forum][favtimes]} style="display:none;"{/if}>(<span id="number_favorite_num">$_G[forum][favtimes]</span>)</strong></a>
-						<!--{if rssforumperm($_G['forum']) && $_G[setting][rssstatus] && !$_GET['archiveid'] && !$subforumonly}--><span class="pipe">|</span><a href="forum.php?mod=rss&fid=$_G[fid]&auth=$rssauth" class="fa_rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a><!--{/if}-->
-						<!--{if !empty($forumarchive)}-->
-							<span class="pipe">|</span><a id="forumarchive" href="javascript:;" class="fa_achv" onmouseover="showMenu(this.id)"><!--{if $_GET['archiveid']}-->$forumarchive[$_GET['archiveid']]['displayname']<!--{else}-->{lang forum_archive}<!--{/if}--></a>
-						<!--{/if}-->
-						<!--{hook/forumdisplay_forumaction}-->
-
-						<!--{if $_G['forum']['ismoderator']}-->
-						<!--{if $_G['forum']['recyclebin']}-->
-							<span class="pipe">|</span><a href="{if $_G['adminid'] == 1}admin.php?mod=forum&action=recyclebin&frames=yes{elseif $_G['forum']['ismoderator']}forum.php?mod=modcp&action=recyclebin&fid=$_G[fid]{/if}" class="fa_bin" target="_blank">{lang forum_recyclebin}</a>
-						<!--{/if}-->
-						<!--{if $_G['forum']['ismoderator'] && !$_GET['archiveid']}-->
-							<span class="pipe">|</span><strong>
-							<!--{if $_G['forum']['status'] != 3}-->
-								<a href="forum.php?mod=modcp&fid=$_G[fid]">{lang modcp}</a>
-							<!--{else}-->
-								<a href="forum.php?mod=group&action=manage&fid=$_G[fid]">{lang modcp}</a>
-							<!--{/if}-->
-							</strong>
-						<!--{/if}-->
-						<!--{hook/forumdisplay_modlink}-->
-						<!--{/if}-->
-					</span>
-					<h1 class="xs2">
-						<a href="forum.php?mod=forumdisplay&fid=$_G[fid]">$_G['forum'][name]</a>
-						<!--{if !$subforumonly}--><span class="xs1 xw0 i">{lang index_today}: <strong class="xi1">$_G[forum][todayposts]</strong><!--{if $_G[forum][todayposts]}--><!--{if $_G[forum][todayposts] < $_G[forum][yesterdayposts]}--><b class="ico_fall">&nbsp;</b><!--{else}--><b class="ico_increase">&nbsp;</b><!--{/if}--><!--{/if}--><span class="pipe">|</span>{lang index_threads}: <strong class="xi1">$_G[forum][threads]</strong><!--{if $_G[forum][rank]}--><span class="pipe">|</span>{lang rank}: <strong class="xi1" title="{lang previous_rank}:$_G[forum][oldrank]">$_G[forum][rank]</strong><!--{if $_G[forum][rank] <= $_G[forum][oldrank]}--><b class="ico_increase">&nbsp;</b><!--{else}--><b class="ico_fall">&nbsp;</b><!--{/if}--><!--{/if}--></span><!--{/if}-->
-					</h1>
-				</div>
-				<!--{if (!empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])) || $moderatedby || ($_G['page'] == 1 && $_G['forum']['rules'])}-->
-					<div class="bm_c cl pbn">
-						<!--{if !empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])}-->
-							<div class="pbn">{lang forum_domain}: <a href="{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}" id="group_link">{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}</a></div>
-						<!--{/if}-->
-						<!--{if $moderatedby}--><div>{lang forum_modedby}: <span class="xi2">$moderatedby</span></div><!--{/if}-->
-						<!--{if $_G['page'] == 1 && $_G['forum']['rules']}-->
-							<div id="forum_rules_{$_G[fid]}" style="$collapse['forum_rules'];">
-								<div class="ptn xg2">$_G['forum'][rules]</div>
-							</div>
-						<!--{/if}-->
-					</div>
-				<!--{/if}-->
-				<!--{if !empty($forumarchive)}-->
-					<div id="forumarchive_menu" class="p_pop" style="display:none">
-						<ul>
-							<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]">{lang threads_all}</a></li>
-							<!--{loop $forumarchive $id $info}-->
-							<li><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&archiveid=$id">{$info['displayname']} ({$info['threads']})</a></li>
-							<!--{/loop}-->
-						</ul>
-					</div>
-				<!--{/if}-->
-			</div>
-
-			<!--{hook/forumdisplay_top}-->
-
+		
+		<div class="col col-12 px-1{if $_G['forum']['allowside']} col-md-8{/if} {if $leftside} col-md-8 {/if}">
 			<!--{if $subexists && $_G['page'] == 1}--><!--{template forum/forumdisplay_subforum}--><!--{/if}-->
-
 			<div class="drag">
 				<!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
 			</div>
@@ -443,7 +443,7 @@
 		</div>
 
 		<!--{if $_G['forum']['allowside']}-->
-		<div class="sd">
+		<div class="col col-12 px-1{if $_G['forum']['allowside']} col-md-4{/if}{if $leftside} col-md-4 {/if}">
 			<!--{hook/forumdisplay_side_top}-->
 			<!--{if !$subforumonly}-->
 				<div class="bm">

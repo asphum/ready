@@ -12,11 +12,62 @@ a:hover {
     padding: 0px !important;
     overflow: hidden;
 }
+#ct {
+    padding: 10px;
+}
+#pt {
+    height: auto;
+}
+.bmw .bm_h {border: none;border-radius: 4px;}
+.bmw .bm_h h2 a {margin-top: auto !important; margin-bottom: auto !important;line-height: 150%;}
 .t_f img {
     max-width: 100% !important;
 }
 @media(max-width: 576px){
-
+.hsmall {
+    display: none !important;
+}
+/* Responsive table
+ ========================================================================== */
+/* Phone landscape and smaller */
+@media (max-width: 959px) {
+    .uk-table-responsive,
+    .uk-table-responsive tbody,
+    .uk-table-responsive th,
+    .uk-table-responsive td,
+    .uk-table-responsive tr {
+      display: block;
+    }
+    .uk-table-responsive thead {
+      display: none;
+    }
+    .uk-table-responsive th,
+    .uk-table-responsive td {
+      width: auto !important;
+      max-width: none !important;
+      min-width: 0 !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
+    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:first-child) > a {
+      padding-top: 5px !important;
+    }
+    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
+    .uk-table-responsive .uk-table-link:not(:last-child) > a {
+      padding-bottom: 5px !important;
+    }
+    .uk-table-justify.uk-table-responsive th,
+    .uk-table-justify.uk-table-responsive td {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .uk-table tbody tr {
+    transition: background-color 0.1s linear;
+  }
     
 }
  .fl_icn_g a img, .fl_icn_g a i {
@@ -117,49 +168,6 @@ a:hover {
     color:Tomato;
     margin-right: 3px;
 }
-
-
-/* Responsive table
- ========================================================================== */
-/* Phone landscape and smaller */
-@media (max-width: 959px) {
-    .uk-table-responsive,
-    .uk-table-responsive tbody,
-    .uk-table-responsive th,
-    .uk-table-responsive td,
-    .uk-table-responsive tr {
-      display: block;
-    }
-    .uk-table-responsive thead {
-      display: none;
-    }
-    .uk-table-responsive th,
-    .uk-table-responsive td {
-      width: auto !important;
-      max-width: none !important;
-      min-width: 0 !important;
-      overflow: visible !important;
-      white-space: normal !important;
-    }
-    .uk-table-responsive th:not(:first-child):not(.uk-table-link),
-    .uk-table-responsive td:not(:first-child):not(.uk-table-link),
-    .uk-table-responsive .uk-table-link:not(:first-child) > a {
-      padding-top: 5px !important;
-    }
-    .uk-table-responsive th:not(:last-child):not(.uk-table-link),
-    .uk-table-responsive td:not(:last-child):not(.uk-table-link),
-    .uk-table-responsive .uk-table-link:not(:last-child) > a {
-      padding-bottom: 5px !important;
-    }
-    .uk-table-justify.uk-table-responsive th,
-    .uk-table-justify.uk-table-responsive td {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-  .uk-table tbody tr {
-    transition: background-color 0.1s linear;
-  }
 
 .data_info {
 

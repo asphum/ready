@@ -9,7 +9,7 @@
 		<item id="copyright"><![CDATA[asphum]]></item>
 		<item id="style">
 			<item id="smfont"><![CDATA['Sarabun', sans-serif]]></item>
-			<item id="threadtitlefontsize"><![CDATA[18px]]></item>
+			<item id="threadtitlefontsize"><![CDATA[16px]]></item>
 			<item id="threadtitlefont"><![CDATA['Sarabun', sans-serif]]></item>
 			<item id="smfontsize"><![CDATA[0.83em]]></item>
 			<item id="tabletext"><![CDATA[#444]]></item>
