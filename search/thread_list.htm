@@ -6,14 +6,14 @@
 	<!--{if empty($threadlist)}-->
 		<p class="emp xs2 xg2">{lang search_nomatch}</p>
 	<!--{else}-->
-		<div class="slst mtw" id="threadlist" {if $modfid} style="position: relative;"{/if}>
+		<div id="threadlist" {if $modfid} style="position: relative;"{/if}>
 			<!--{if $modfid}-->
 			<form method="post" autocomplete="off" name="moderate" id="moderate" action="forum.php?mod=topicadmin&action=moderate&fid=$modfid&infloat=yes&nopost=yes">
 			<!--{/if}-->
 			<ul>
 				<!--{loop $threadlist $thread}-->
 				<li class="pbw" id="$thread[tid]">
-					<h3 class="xs3">
+					<h3 style="font-size:1.2rem;font-weight:bold;">
 						<!--{if $modfid}-->
 							<!--{if $thread['fid'] == $modfid && ($thread['displayorder'] <= 3 || $_G['adminid'] == 1)}-->
 								<input onclick="tmodclick(this)" type="checkbox" name="moderate[]" value="$thread[tid]" />&nbsp;

@@ -6,8 +6,8 @@ html {
 }
 body {
     font-family: {FONT} !important;
-    background-image: url({IMGDIR}/bg/codepen.svg);
-    background-color: #31CC70;
+    background-image: url({IMGDIR}/bg/codepen.svg) !important;
+    background-color: #31CC70 !important;
     background-attachment: fixed;
 }
 

@@ -1888,7 +1888,7 @@ body { background: #FFF none !important; }
 		#scform_submit { width: 107px; opacity: 0; filter: alpha(opacity=0); cursor: pointer; }
 		#scform_srchtxt, #scform_submit { height: 35px; border: none; }
 			.ie_all #scform_srchtxt { height: 33px; line-height: 33px; }
-	.sttl { margin: 10px 0; padding: 5px; border-bottom: 1px solid #CCC; background: #F5F5F5; }
+	.sttl { margin: 10px 0; padding: 5px; border-bottom: 0px solid #CCC; background: #F5F5F5; }
 	.slst { max-width: 760px; }
 		.slst a { color: #00C; text-decoration: underline; font-weight: 400; }
 		.slst a:visited { color: purple; }
