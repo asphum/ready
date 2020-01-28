@@ -92,7 +92,8 @@
 <!--{/if}-->
 <div>
     <div id="mainmenu">
-      <nav class="navbar navbar-expand-lg container">
+    <div class="rd-container-xlarge">
+      <nav class="navbar navbar-expand-lg">
         <!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a class="navbar-brand" href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -140,6 +141,7 @@
       <!--{hook/global_nav_extra}-->
       </nav>
  
+    </div>
     </div>
   <!--{ad/subnavbanner/a_mu}-->
 
