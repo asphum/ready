@@ -1,3 +1,43 @@
+.rd-container-xlarge {
+  max-width: 1600px;
+}
+
+#mainmenu {
+  background-color: #323232 !important;
+  color: #fff;
+  padding: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+.navbar-brand img {
+  height: 30px;
+}
+.collapse ul li {
+  margin: 5px;
+  padding: 0;
+}
+.collapse ul li a, .navbar-nav a {
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+.collapse ul li a:hover, .navbar-nav a:hover {
+  background-color: #eb622c;
+}
+.activemenu {
+  background-color: #eb622c;
+}
+.collapse ul li a span {
+  display: none;
+}
+
 .wp {
     background: #FFF;
     border: none;
@@ -117,34 +157,6 @@ a:hover {
     font-size: 1rem;
     font-weight: 600;
 
-}
-.mainmenu {
-    padding: 10px;
-}
-.mainmenu ul li {
-    margin: 5px;
-}
-.mainmenu ul li a {
-    padding: 10px 15px;
-    font-size: 2rem;
-    font-weight: 600;
-    text-decoration: none;
-    display: block;
-    text-shadow: 1px 1px 0 #61d891;
-}
-.activemenu, .mainmenu ul li a:hover {
-    color: #333 !important;
-}
-
-.activemenu, .mainmenu ul li:hover {
-    border: none;
-    border-radius: 10px;
-    background-color: #ffffff5c;
-}
-.mainmenu ul li a span {
-    padding: 0 10px;
-    display: table-footer-group;
-    font-size: 1.2rem;
 }
 
 #threadstamp img {

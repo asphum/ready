@@ -33,14 +33,11 @@
     $diynav
 <!--{/if}-->
 <!--{if empty($topic) || $topic['useheader']}-->
-    <div id="toptb" class="cl container-sm">
+    <div id="toptb" class="cl container-sm" hidden>
         <!--{hook/global_cpnav_top}-->
         <div class="wp">
             <div class="z">
-                <!--{loop $_G['setting']['topnavs'][0] $nav}-->
-                    <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
-                <!--{/loop}-->
-                <!--{hook/global_cpnav_extra1}-->
+
             </div>
             <div class="y">
                 <!--{hook/global_cpnav_extra2}-->
@@ -93,28 +90,76 @@
     <!--{ad/headerbanner/wp a_h}-->
     <!--{hook/global_header}-->
 <!--{/if}-->
+<div>
+    <div id="mainmenu">
+      <nav class="navbar navbar-expand-lg ">
+        <!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a class="navbar-brand" href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <!--{eval $mnid = getcurrentnav();}-->
+            <!--{loop $_G['setting']['navs'] $nav}-->
+                <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
+            <!--{/loop}-->
+          </ul>
+          <ul class="navbar-nav">
+                <!--{loop $_G['setting']['topnavs'][0] $nav}-->
+                    <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
+                <!--{/loop}-->
+                <!--{hook/global_cpnav_extra1}-->
+            <!--{if $_G['uid']}-->
+            
+            <!--{elseif !empty($_G['cookie']['loginuser'])}-->
+            <p>
+              <strong><a id="loginuser" class="noborder"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a></strong>
+              <span class="pipe">|</span><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
+              <span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+              </p>
+              <!--{elseif !$_G[connectguest]}-->
+                  <li><a href="member.php?mod=logging&action=login" >เข้าสู่ระบบ</a></li>
+                  <li><a href="member.php?mod=register" >สมัครสมาชิก</a></li>
+              <!--{else}-->
+              <div id="um">
+              <div class="avt y"><!--{avatar(0,small)}--></div>
+              <p>
+              <strong class="vwmy qq">{$_G[member][username]}</strong>
+              <!--{hook/global_usernav_extra1}-->
+              <span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+              </p>
+              <p>
+              <a href="home.php?mod=spacecp&ac=credit&showcredit=1">{lang credits}: 0</a>
+              <span class="pipe">|</span>{lang usergroup}: $_G[group][grouptitle]
+              </p>
+  
+              <!--{/if}-->
+            </ul>
+        </div>
+      <!--{hook/global_nav_extra}-->
+      </nav>
+ 
+    </div>
+  <!--{ad/subnavbanner/a_mu}-->
+
+</div>
 <div class="container-sm">
     <div class="row">
         <div class="col-md-3">
-            <div class="mainmenu nv">
-                <ul class="nav flex-column">
-                    <!--{eval $mnid = getcurrentnav();}-->
-                    <h2><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
-                    <!--{loop $_G['setting']['navs'] $nav}-->
-                        <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
-                    <!--{/loop}-->
-                </ul>
-                <!--{hook/global_nav_extra}-->
-            </div>
-            <!--{ad/subnavbanner/a_mu}-->
-        </div>
-    <div class="col-md-9" style="position: unset;">
-        <div id="wp">
+          <div class="p-3">
             <div class="p-3">
-                <!--{template common/header_userstatus}-->
-            </div>
-            <form method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}">
+              <form method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}">
                 <input type="hidden" name="mod"  value="forum" /><input type="hidden" name="formhash" value="{FORMHASH}" /><input type="hidden" name="srchtype" value="title" /><input type="hidden" name="srhfid" value="$_G[fid]" /><input type="hidden" name="srhlocality" value="$_G['basescript']::{CURMODULE}" />
                 <input style="color:#292b2c; font-size: 1.2rem;font-weight: normal;" type="text" name="srchtxt" class="form-control" placeholder="พิมพ์คำค้น..." autocomplete="off" />
             </form>
+            </div>
+            <!--{template common/header_userstatus}-->
+ 
+          </div>
+        </div>
+    <div class="col-md-9" style="position: unset;">
+        <div id="wp">
+
+
             
