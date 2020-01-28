@@ -92,7 +92,7 @@
 <!--{/if}-->
 <div>
     <div id="mainmenu">
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg container">
         <!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a class="navbar-brand" href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -147,7 +147,7 @@
 <div class="container-sm">
     <div class="row">
         <div class="col-md-3">
-          <div class="p-3">
+
             <div class="p-3">
               <form method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}">
                 <input type="hidden" name="mod"  value="forum" /><input type="hidden" name="formhash" value="{FORMHASH}" /><input type="hidden" name="srchtype" value="title" /><input type="hidden" name="srhfid" value="$_G[fid]" /><input type="hidden" name="srhlocality" value="$_G['basescript']::{CURMODULE}" />
@@ -155,11 +155,9 @@
             </form>
             </div>
             <!--{template common/header_userstatus}-->
- 
-          </div>
         </div>
-    <div class="col-md-9" style="position: unset;">
-        <div id="wp">
+<div class="col-md-9" style="position: unset;">
+  <div id="wp">
 
 
             
