@@ -62,7 +62,7 @@
             <!--{if empty($_G['cookie']['ignore_notice'])}-->
                 <li class="ignore_noticeli"><a href="javascript:;" onclick="setcookie('ignore_notice', 1);hideMenu('myprompt_menu')" title="{lang temporarily_to_remind}"><em class="ignore_notice"></em></a></li>
             <!--{/if}-->
-        </ul>
+        </ul> 
         <!--{/if}-->
         <!--{if $_G['uid'] && !empty($_G['style']['extstyle'])}-->
             <div id="sslct_menu" class="cl p_pop" style="display: none;">
@@ -90,9 +90,12 @@
     <div class="rd-container-xlarge">
       <nav class="navbar navbar-expand-lg text-center">
         <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="menubur fas fa-bars"></i>
+          <i class="iconbar fas fa-bars"></i>
         </a>
-      
+        <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="iconbar fas fa-user"></i>
+        </a>
+     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav navmenu mr-auto">
             <!--{eval $mnid = getcurrentnav();}-->
@@ -151,9 +154,7 @@
             </div>
 
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="menubur fas fa-bars"></i>
-              </button>
+
               <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav navuser">
                   <!--{template common/header_userstatus}-->

@@ -62,6 +62,10 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
   margin: auto;
 }
+.iconbar {
+  color: #FFF;
+  font-size: 2rem;
+}
 .kbd,
 .rfm .p_chk {
   background: none !important;
