@@ -92,7 +92,7 @@
 			</div>
 		<!--{/if}-->
 		
-		<div class="col col-12 px-1{if $_G['forum']['allowside']} col-md-8{/if} {if $leftside} col-md-8 {/if}">
+		<div class="col col-12 {if $_G['forum']['allowside']} col-md-8{/if} {if $leftside} col-md-8 {/if}">
 			<!--{if $subexists && $_G['page'] == 1}--><!--{template forum/forumdisplay_subforum}--><!--{/if}-->
 			<div class="drag">
 				<!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
@@ -443,7 +443,7 @@
 		</div>
 
 		<!--{if $_G['forum']['allowside']}-->
-		<div class="col col-12 px-1{if $_G['forum']['allowside']} col-md-4{/if}{if $leftside} col-md-4 {/if}">
+		<div class="col col-12 {if $_G['forum']['allowside']} col-md-4{/if}{if $leftside} col-md-4 {/if}">
 			<!--{hook/forumdisplay_side_top}-->
 			<!--{if !$subforumonly}-->
 				<div class="bm">

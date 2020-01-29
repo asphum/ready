@@ -624,7 +624,7 @@
 */
 	.vwthd { padding-right: 80px !important; }
 		.vwthd div.y { display: inline; margin-right: -60px; }
-		.ts { display: inline; font: 700 20px {FONT}; text-shadow: 1px 1px 0 #000; color: #222;}
+		.ts { display: inline; font: 800 1.5rem {FONT}; text-shadow: 0.5px 0.5px 0 #FFF; color: #222;}
 
 #nv_forum #ct { border-color: {SPECIALBORDER}; }
 

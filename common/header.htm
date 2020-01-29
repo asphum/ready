@@ -36,10 +36,6 @@
     <div id="toptb" class="cl container-sm" hidden>
         <!--{hook/global_cpnav_top}-->
         <div class="wp">
-            <div class="z">
-
-            </div>
-            <div class="y">
                 <!--{hook/global_cpnav_extra2}-->
                 <!--{loop $_G['setting']['topnavs'][1] $nav}-->
                     <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
@@ -47,7 +43,6 @@
                 <!--{if check_diy_perm($topic)}-->
                     $diynav
                 <!--{/if}-->
-            </div>
         </div>
     </div>
 
@@ -93,20 +88,20 @@
 <div>
     <div id="mainmenu">
     <div class="rd-container-xlarge">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg text-center">
         <!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a class="navbar-brand" href="{if $_G['setting']['domain']['app']['default']}{$_G['scheme']}://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}-->
         <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="menubur fas fa-bars"></i>
         </a>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav navmenu mr-auto">
             <!--{eval $mnid = getcurrentnav();}-->
             <!--{loop $_G['setting']['navs'] $nav}-->
                 <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="activemenu" {/if}$nav[nav]></li><!--{/if}-->
             <!--{/loop}-->
           </ul>
-          <ul class="navbar-nav">
+          <ul class="navbar-nav navmenu">
                 <!--{loop $_G['setting']['topnavs'][0] $nav}-->
                     <!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}-->$nav[code]<!--{/if}-->
                 <!--{/loop}-->
@@ -147,16 +142,28 @@
 
 </div>
 <div class="container-sm">
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col-md-3">
-
             <div class="p-3">
               <form method="{if $_G[fid] && !empty($searchparams[url])}get{else}post{/if}" autocomplete="off" action="{if $_G[fid] && !empty($searchparams[url])}$searchparams[url]{else}search.php?searchsubmit=yes{/if}">
                 <input type="hidden" name="mod"  value="forum" /><input type="hidden" name="formhash" value="{FORMHASH}" /><input type="hidden" name="srchtype" value="title" /><input type="hidden" name="srhfid" value="$_G[fid]" /><input type="hidden" name="srhlocality" value="$_G['basescript']::{CURMODULE}" />
                 <input style="color:#292b2c; font-size: 1.2rem;font-weight: normal;" type="text" name="srchtxt" class="form-control" placeholder="พิมพ์คำค้น..." autocomplete="off" />
             </form>
             </div>
-            <!--{template common/header_userstatus}-->
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="menubur fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav navuser">
+                  <!--{template common/header_userstatus}-->
+                </ul>
+
+              </div>
+            </nav>
+ 
+ 
         </div>
 <div class="col-md-9" style="position: unset;">
   <div id="wp">

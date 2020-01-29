@@ -15,70 +15,97 @@
   color: #fff;
   padding: 0;
   z-index: 100;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.nevbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 .navbar-brand img {
   height: 30px;
 }
 .collapse ul li {
-  margin: 5px;
+  margin: 0;
   padding: 0;
 }
-.collapse ul li a, .navbar-nav a {
+.collapse ul li a,
+.navmenu a {
   color: #fff !important;
   font-size: 1.2rem;
   font-weight: 700;
   padding: 5px 10px;
-  display: inline-block;
+  display: block !important;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   text-decoration: none;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
-  margin: 0;
+  margin: auto 5px;
 }
-.collapse ul li a:hover, .navbar-nav a:hover {
-  background-color: #eb622c;
-}
+.collapse ul li a:hover,
+.navmenu a:hover,
 .activemenu {
   background-color: #eb622c;
+  border-radius: 4px;
 }
 .collapse ul li a span {
   display: none;
 }
-
+.navuser a {
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  display: block !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  margin: auto;
+}
+.kbd,
+.rfm .p_chk {
+  background: none !important;
+}
 .wp {
-    background: #FFF;
-    border: none;
-    border-radius: 6px;
+  background: #fff;
+  border: none;
+  border-radius: 6px;
 }
 a:hover {
-    text-decoration: none !important;
-    color: red;
+  text-decoration: none !important;
+  color: red;
 }
 #avatardesigner {
-    border: 1px solid #CCC;
-    padding: 0px !important;
-    overflow: hidden;
+  border: 1px solid #ccc;
+  padding: 0px !important;
+  overflow: hidden;
 }
 #ct {
-    padding: 10px;
+  padding: 10px;
 }
 #pt {
-    height: auto;
+  height: auto;
 }
-.bmw .bm_h {border: none;border-radius: 4px;}
-.bmw .bm_h h2 a {margin-top: auto !important; margin-bottom: auto !important;line-height: 150%;}
+.bmw .bm_h {
+  border: none;
+  border-radius: 4px;
+}
+.bmw .bm_h h2 a {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  line-height: 150%;
+}
 .t_f img {
-    max-width: 100% !important;
+  max-width: 100% !important;
 }
-@media(max-width: 576px){
-.hsmall {
+@media (max-width: 576px) {
+  .hsmall {
     display: none !important;
-}
-/* Responsive table
+  }
+  /* Responsive table
  ========================================================================== */
-/* Phone landscape and smaller */
-@media (max-width: 959px) {
+  /* Phone landscape and smaller */
+  @media (max-width: 959px) {
     .uk-table-responsive,
     .uk-table-responsive tbody,
     .uk-table-responsive th,
@@ -116,103 +143,106 @@ a:hover {
   .uk-table tbody tr {
     transition: background-color 0.1s linear;
   }
-    
 }
- .fl_icn_g a img, .fl_icn_g a i {
-    max-width: 100%;
+.fl_icn_g a img,
+.fl_icn_g a i {
+  max-width: 100%;
 }
-.fl_icn a img, .fl_icn a i {
-    max-width: 100%;
-    width: 100px;
+.fl_icn a img,
+.fl_icn a i {
+  max-width: 100%;
+  width: 100px;
 }
 .imgavatarhead {
-    text-align: center;
- }
+  text-align: center;
+}
 .imgavatarhead img {
-    border-radius: 10px !important;
-    width: auto;
-    background: transparent;
-    max-width: 100%;
-    padding: 5px;
- }
- .card-profile{
-     padding: 3px 5px;
-     display: block;
-     text-decoration: none;
-     border: 1px solid #EEE;
-     border-radius: 4px !important;
-     width: 100%;
-     margin: 5px;
-     font-size: 1.2rem;
-     font-weight: 600;
-     background: #FFF;
- }
- .card-profile:hover {
-    background: #333 !important;
-    color: #FFF;
-    text-decoration: none;
+  border-radius: 10px !important;
+  width: auto;
+  background: transparent;
+  max-width: 100%;
+  padding: 5px;
+}
+.card-profile {
+  padding: 3px 5px;
+  display: block;
+  text-decoration: none;
+  border: 1px solid #eee;
+  border-radius: 4px !important;
+  width: 100%;
+  margin: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: #222 !important;
+}
+.card-profile:hover {
+  background: #333 !important;
+  color: #fff;
+  text-decoration: none;
 }
 .statusbord {
-    padding: 3px;
-    background-color: #ffffff5c;
-    border-radius: 6px 6px 0 0;
+  padding: 3px;
+  background-color: #ffffff5c;
+  border-radius: 6px 6px 0 0;
 }
-.card-statusbord{
-    padding: 3px 5px;
-    text-decoration: none;
-    border: none;
-    width: 100%;
-    font-size: 1rem;
-    font-weight: 600;
-
+.card-statusbord {
+  padding: 3px 5px;
+  text-decoration: none;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 #threadstamp img {
-    position: absolute;
-    top: 20px;
-    max-width: 100px;
-    right: 10%;
+  position: absolute;
+  top: 20px;
+  max-width: 100px;
+  right: 10%;
 }
 .bgcontent {
-    background-color: #FFF;
-    border-radius: 6px;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
-.px, .pt, .ps, select {
-    border: 1px solid #DDD;
-    background: #FFF;
-    color: #000;
-    border-radius: 4px;
+.px,
+.pt,
+.ps,
+select {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
 }
 .iconusermenu {
-    color:Tomato;
-    margin-right: 3px;
+  color: Tomato;
+  margin-right: 3px;
 }
 
 .data_info {
-
-    padding: .5rem!important;
+  padding: 0.5rem !important;
 }
 .data_info h2 {
-    font-weight: 700;
+  font-weight: 700;
 }
 .data_info p {
-    font-size: 14px;
-    color: #000;
+  font-size: 14px;
+  color: #000;
 }
 .img_cont img {
-    width: 100%;
-    border: none;
+  width: 100%;
+  border: none;
 }
 .fl_i {
-    width: auto;
-    padding: 10px;
-    text-align: left;
+  width: auto;
+  padding: 10px;
+  text-align: left;
 }
-.fl, .bm {
-    border: none;
+.fl,
+.bm {
+  border: none;
 }
 .bmw .bm_h a {
-    font-size: 1.4rem;
-    font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 700;
 }

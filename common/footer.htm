@@ -135,32 +135,7 @@
 	</script>
 <!--{/if}-->
 
-<div id="scrolltop">
-	<!--{if $_G[fid] && $_G['mod'] == 'viewthread'}-->
-	<span><a href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&extra=$_GET[extra]&page=$page{if $_GET[from]}&from=$_GET[from]{/if}" onclick="showWindow('reply', this.href)" class="replyfast" title="{lang fastreply}"><b>{lang fastreply}</b></a></span>
-	<!--{/if}-->
-	<span hidefocus="true"><a title="{lang scrolltop}" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>{lang scrolltop}</b></a></span>
-	<!--{if $_G[fid]}-->
-	<span>
-		<!--{if $_G['mod'] == 'viewthread'}-->
-		<a href="forum.php?mod=forumdisplay&fid=$_G[fid]" hidefocus="true" class="returnlist" title="{lang return_list}"><b>{lang return_list}</b></a>
-		<!--{else}-->
-		<a href="forum.php" hidefocus="true" class="returnboard" title="{lang return_forum}"><b>{lang return_forum}</b></a>
-		<!--{/if}-->
-	</span>
-	<!--{/if}-->
-</div>
-<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
-<!--{if isset($_G['makehtml'])}-->
-	<script type="text/javascript" src="{$_G[setting][jspath]}html2dynamic.js?{VERHASH}"></script>
-	<script type="text/javascript">
-		var html_lostmodify = {TIMESTAMP};
-		htmlGetUserStatus();
-		<!--{if isset($_G['htmlcheckupdate'])}-->
-		htmlCheckUpdate();
-		<!--{/if}-->
-	</script>
-<!--{/if}-->
+
 <!--{eval output();}-->
 </body>
 </html>
