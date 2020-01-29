@@ -266,7 +266,8 @@
 							<!--{eval $waterfallwidth = $_G[setting][forumpicstyle][thumbwidth] + 24; }-->
 
 							<div class="col">
-								<a href="forum.php?mod=viewthread&tid=$thread[tid]" ><div class="m-2">
+							<div class="p-2">
+								<a href="forum.php?mod=viewthread&tid=$thread[tid]" ><div>
 									<!--{if !$_GET['archiveid'] && $_G['forum']['ismoderator']}-->
 										<!--{if $thread['fid'] == $_G[fid]}-->
 											<!--{if $thread['displayorder'] <= 3 || $_G['adminid'] == 1}-->
@@ -280,9 +281,9 @@
 									<!--{/if}-->
 									<div class="cover-img">
 										<div style="opacity: 0.8;padding:3px 10px;border-radius:0 0 0 6px;position: absolute; z-index: 1;right:0px;background-color: #FFF;">
-											<span style="font-size:0.8em; color:#000; font-weight:700;">อ่าน: $thread[views]</span>
-											<span style="font-size:0.8em; color:#000; font-weight:700;">ตอบ: $thread[allreplies]</span>
-											<p class="uk-text-nowrap uk-margin-remove" style="font-size:0.8em; color:#000; font-weight:700;">โดย: $thread[author]</p>
+											<span style="font-size:0.8rem; color:#000; font-weight:700;">อ่าน: $thread[views]</span>
+											<span style="font-size:0.8rem; color:#000; font-weight:700;">ตอบ: $thread[allreplies]</span>
+											<p class="uk-text-nowrap uk-margin-remove" style="font-size:0.8rem; color:#000; font-weight:700;">โดย: $thread[author]</p>
 										</div>
 											<!--{if $thread['cover']}-->
 												<img style="width: 100%;max-height: 200px;" src="$thread[coverpath]?{VERHASH}">
@@ -290,10 +291,11 @@
 												<img  src="{IMGDIR}/nophoto.gif?{VERHASH}">
 											<!--{/if}-->
 										<div class="" style="padding:2px 5px; background:#000;opacity: 0.8;">
-											<span class="uk-margin-remove" style="font-size:0.8em; color:#FFF; font-weight:200;">$thread[subject]</span>
+											<span class="uk-margin-remove" style="font-size:1rem; color:#FFF; font-weight:200;">$thread[subject]</span>
 										</div>
 									</div>
 								</div></a>
+							</div>
 							</div>
 
 							<!--{/loop}-->
