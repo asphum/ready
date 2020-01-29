@@ -26,8 +26,8 @@
 					</h1>
 				</div>
 				<!--{if $view != 'my'}-->
-				<div class="bm_c cl pbn">
-					<div style=";" id="forum_rules_1163">
+				<div class="bg-content">
+					<div id="forum_rules_1163">
 						<div class="ptn xg2">$lang['guide_'.$view.'_description']</div>
 					</div>
 				</div>
@@ -35,11 +35,10 @@
 			</div>
 			<!--{if $view != 'index'}-->
 			<div id="pgt" class="bm bw0 pgs cl">
-				$multipage
-				<a onclick="showWindow('nav', this.href, 'get', 0)" href="forum.php?mod=misc&amp;action=nav"><img src="{IMGDIR}/pn_post.png" alt="{lang send_posts}" /></a>
+				<a href="forum.php?mod=misc&amp;action=nav" class="btn btn-ready"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a>
 			</div>
 			<!--{/if}-->
-			<ul id="thread_types" class="ttp bm cl">
+			<ul id="thread_types" class="listmenucat">
 				<li $currentview['hot']><a href="forum.php?mod=guide&view=hot">{lang guide_hot}</a></li>
 				<li $currentview['digest']><a href="forum.php?mod=guide&view=digest">{lang guide_digest}</a></li>
 				<li $currentview['new']><a href="forum.php?mod=guide&view=new">{lang guide_new}</a></li>
@@ -58,7 +57,7 @@
 							<!--{if $key == 'hot'}-->{lang guide_hot}<!--{elseif $key == 'digest'}-->{lang guide_digest}<!--{elseif $key == 'newthread'}-->{lang guide_newthread}<!--{elseif $key == 'new'}-->{lang guide_new}<!--{elseif $key == 'my'}-->{lang guide_my}<!--{/if}-->
 						</h2>
 					</div>
-					 <div class="bm_c">
+					 <div class="bg-content">
 					 	<div class="xl xl2 cl">
 					 		<!--{if $list['threadcount']}-->
 					 			<!--{eval $i=0;}-->
@@ -135,7 +134,7 @@
 							<!--{/if}-->
 						</table>
 					</div>
-					<div class="bm_c">
+					<div class="bg-content">
 						<div id="forumnew" style="display:none"></div>
 							<table cellspacing="0" cellpadding="0">
 							<!--{subtemplate forum/guide_list_row}-->

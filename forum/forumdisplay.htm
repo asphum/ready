@@ -19,7 +19,7 @@
 
 	<div class="bm bml pbn hsmall">
 		<!--{if $_G[forum][banner] && !$subforumonly}--><img src="$_G[forum][banner]" alt="$_G['forum'][name]" /><!--{/if}-->
-		<div class="bm_h cl">
+		<div class="bg-head">
 			<!--{if $_G['page'] == 1 && $_G['forum']['rules']}--><span class="o"><img id="forum_rules_{$_G[fid]}_img" src="{IMGDIR}/collapsed_{$collapse[forum_rulesimg]}.gif" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('forum_rules_{$_G[fid]}')" /></span><!--{/if}-->
 			<span class="y">
 				<a href="home.php?mod=spacecp&ac=favorite&type=forum&id=$_G[fid]&handlekey=favoriteforum&formhash={FORMHASH}" id="a_favorite" class="fa_fav" onclick="showWindow(this.id, this.href, 'get', 0);">{lang forum_favorite} <strong class="xi1" id="number_favorite" {if !$_G[forum][favtimes]} style="display:none;"{/if}>(<span id="number_favorite_num">$_G[forum][favtimes]</span>)</strong></a>
@@ -51,7 +51,7 @@
 			</h1>
 		</div>
 		<!--{if (!empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])) || $moderatedby || ($_G['page'] == 1 && $_G['forum']['rules'])}-->
-			<div class="bm_c cl pbn">
+			<div class="bg-content pbn">
 				<!--{if !empty($_G[forum][domain]) && !empty($_G['setting']['domain']['root']['forum'])}-->
 					<div class="pbn">{lang forum_domain}: <a href="{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}" id="group_link">{$_G['scheme']}://{$_G[forum][domain]}.{$_G['setting']['domain']['root']['forum']}</a></div>
 				<!--{/if}-->
@@ -77,7 +77,7 @@
 
 	<!--{hook/forumdisplay_top}-->
 
-	<div id="ct" class="row">
+	<div id="ct">
 		<!--{if $leftside}-->
 			<div id="sd_bdl" class="bdl" onmouseover="showMenu({'ctrlid':this.id, 'pos':'dz'});" style="width:{$_G['setting']['leftsidewidth']}px;margin-left:-{$_G['leftsidewidth_mwidth']}px">
 				<!--{hook/forumdisplay_leftside_top}-->
@@ -92,7 +92,7 @@
 			</div>
 		<!--{/if}-->
 		
-		<div class="col col-12 {if $_G['forum']['allowside']} col-md-8{/if} {if $leftside} col-md-8 {/if}">
+		<div>
 			<!--{if $subexists && $_G['page'] == 1}--><!--{template forum/forumdisplay_subforum}--><!--{/if}-->
 			<div class="drag">
 				<!--[diy=diy4]--><div id="diy4" class="area"></div><!--[/diy]-->
@@ -100,10 +100,10 @@
 
 			<!--{if !empty($_G['forum']['recommendlist'])}-->
 				<div class="bm bmw">
-					<div class="bm_h cl">
+					<div class="bg-head">
 						<h2>{lang forum_recommend}</h2>
 					</div>
-					<div class="bm_c cl">
+					<div class="bg-content">
 						<!--{subtemplate forum/recommend}-->
 					</div>
 				</div>
@@ -115,11 +115,11 @@
 
 				<!--{if $recommendgroups && !$_G['forum']['allowside']}-->
 				<div class="bm bmw fl{if $_G['forum']['forumcolumns']} flg{/if}">
-					<div class="bm_h cl">
+					<div class="bg-head">
 						<span class="o"><img id="recommendgroups_{$_G[forum][fid]}_img" src="{IMGDIR}/$collapseimg[recommendgroups]" title="{lang spread}" alt="{lang spread}" onclick="toggle_collapse('recommendgroups_{$_G[forum][fid]}');" /></span>
 						<h2>{lang recommended_groups}</h2>
 					</div>
-					<div class="bm_c" id="recommendgroups_{$_G[forum][fid]}" style="$collapse[recommendgroups]">
+					<div class="bg-content" id="recommendgroups_{$_G[forum][fid]}" style="$collapse[recommendgroups]">
 						<table cellspacing="0" cellpadding="0" class="fl_tb">
 							<!--{loop $recommendgroups $key $group}-->
 							<!--{if $_G['forum']['forumcolumns']}-->
@@ -397,14 +397,14 @@
 					</script>
 				<!--{/if}-->
 
-				<div id="pgt" class="bm bw0 pgs cl">
-					<!--{if !$_GET['archiveid']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a><!--{/if}-->
+				<div id="pgt" class="p-3">
+					<!--{if !$_GET['archiveid']}--><a href="forum.php?mod=post&action=newthread&fid=$_G[fid]" class="btn btn-ready"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a><!--{/if}-->
 					<!--{hook/forumdisplay_postbutton_top}-->
 				</div>
 				<!--{if ($_G['forum']['threadtypes'] && $_G['forum']['threadtypes']['listable']) || count($_G['forum']['threadsorts']['types']) > 0}-->
-					<ul id="thread_types" class="ttp bm cl">
+					<ul id="thread_types" class="guide">
 						<!--{hook/forumdisplay_threadtype_inner}-->
-						<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="xw1 a"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
+						<li id="ttp_all" {if !$_GET['typeid'] && !$_GET['sortid']}class="listmenucatative"{/if}><a href="forum.php?mod=forumdisplay&fid=$_G[fid]{if $_G['forum']['threadsorts']['defaultshow']}&filter=sortall&sortall=1{/if}{if $_GET['archiveid']}&archiveid={$_GET['archiveid']}{/if}">{lang forum_viewall}</a></li>
 						<!--{if $_G['forum']['threadtypes']}-->
 							<!--{loop $_G['forum']['threadtypes']['types'] $id $name}-->
 								<!--{if $_GET['typeid'] == $id}-->
@@ -443,18 +443,18 @@
 		</div>
 
 		<!--{if $_G['forum']['allowside']}-->
-		<div class="col col-12 {if $_G['forum']['allowside']} col-md-4{/if}{if $leftside} col-md-4 {/if}">
+		<div>
 			<!--{hook/forumdisplay_side_top}-->
 			<!--{if !$subforumonly}-->
 				<div class="bm">
-					<div class="bm_h">
+					<div class="bg-head">
 						<h2>{lang their}: <!--{eval echo cutstr($_G['cache']['forums'][$_G['forum']['fup']]['name'], 22, '')}--></h2>
 					</div>
-					<div class="bm_c">
-						<ul class="xl xl2 cl">
+					<div class="bg-content">
+						<ul class="list-group list-group-horizontal">
 						<!--{loop $_G['cache']['forums'] $bforum}-->
 							<!--{if $bforum['fup'] == $_G['forum']['fup'] && $bforum['status']}-->
-								<li><a href="forum.php?mod=forumdisplay&fid=$bforum[fid]">$bforum['name']</a></li>
+								<li class="list-group-item"><a href="forum.php?mod=forumdisplay&fid=$bforum[fid]">$bforum['name']</a></li>
 							<!--{/if}-->
 						<!--{/loop}-->
 						</ul>
@@ -463,13 +463,13 @@
 
 				<!--{if $recommendgroups}-->
 				<div class="bm">
-					<div class="bm_h cl">
+					<div class="bg-head">
 						<h2>{lang recommended_groups}</h2>
 					</div>
-					<div class="bm_c cl">
-						<ul class="ml mls cl">
+					<div class="bg-content">
+						<ul class="list-group list-group-horizontal">
 						<!--{loop $recommendgroups $key $group}-->
-							<li>
+							<li class="list-group-item">
 							<a href="forum.php?mod=group&fid=$group[fid]" title="$group[name]" target="_blank" class="avt"><img src="$group[icon]" alt="$group[name]"></a>
 							<p><a href="forum.php?mod=group&fid=$group[fid]" target="_blank">$group[name]</a></p>
 							</li>
@@ -482,14 +482,14 @@
 				<!--{if !($_G['forum']['simple'] & 1) && $_G[setting][whosonlinestatus]}-->
 					<div class="bm">
 						<!--{if $detailstatus}-->
-						<div class="bm_h cl">
+						<div class="bg-head">
 							<span class="o y"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&page=$page&showoldetails=no#online"><img src="{IMGDIR}/collapsed_no.gif" alt="" /></a></span>
 							<h2>{lang forum_activeusers} ($onlinenum)</h2>
 						</div>
-						<div class="bm_c">
-							<ul class="ml mls cl">
+						<div class="bg-content">
+							<ul class="list-group list-group-horizontal">
 							<!--{loop $whosonline $key $online}-->
-								<li>
+								<li class="list-group-item text-center">
 								<a href="home.php?mod=space&uid=$online[uid]" class="avt"><!--{avatar($online[uid],small)}--></a>
 								<!--{if $online['uid']}-->
 									<p><a href="home.php?mod=space&uid=$online[uid]">$online[username]</a></p>
@@ -502,7 +502,7 @@
 							</ul>
 						</div>
 						<!--{else}-->
-						<div class="bm_h cl">
+						<div class="bg-head">
 							<span class="o y"><a href="forum.php?mod=forumdisplay&fid=$_G[fid]&page=$page&showoldetails=yes#online" class="nobdr"><img src="{IMGDIR}/collapsed_yes.gif" alt="" /></a></span>
 							<h2>{lang forum_activeusers} ($onlinenum)</h2>
 						</div>

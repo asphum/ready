@@ -63,7 +63,7 @@
   margin: auto;
 }
 .iconbar {
-  color: #FFF;
+  color: #fff;
   font-size: 2rem;
 }
 .kbd,
@@ -249,4 +249,85 @@ select {
 .bmw .bm_h a {
   font-size: 1.4rem;
   font-weight: 700;
+}
+.listmenucat {
+  border: none;
+  position: relative;
+  z-index: 50;
+}
+.listmenucat li {
+  float: left;
+  padding-bottom: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.listmenucat li a {
+  float: left;
+  margin-right: 5px;
+  padding: 4px 8px 3px;
+  border: 1px solid #CDCDCD;
+  background: #FFF;
+  white-space: nowrap;
+  color: #222;
+  text-decoration: none;
+}
+.listmenucatative {
+
+}
+.bg-head {
+  background-color: #CCC;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+}
+.bg-content {
+
+  color: #000;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+.btn-ready {
+  background-color: #eb622c;
+  border-radius: 4px;
+  color: #fff !important;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 8px 10px;
+  display: inline-block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+  border: none;
+}
+.btn-ready:hover {
+  background-color: #222;
+
+}
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }
