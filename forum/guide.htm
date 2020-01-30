@@ -11,43 +11,26 @@
 		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><!--{if helper_access::check_module('guide')}--><em>&raquo;</em><a href="forum.php?mod=guide&view=index">{lang guide}</a><!--{/if}-->$navigation
 	</div>
 </div>
+
+<!--{if $view != 'index'}-->
+<div class="p-3">
+  <a href="forum.php?mod=misc&amp;action=nav" class="btn btn-ready"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a>
+</div>
+<!--{/if}-->
+<ul id="thread_types" class="listmenucat">
+  <li $currentview['hot']><a href="forum.php?mod=guide&view=hot">{lang guide_hot}</a></li>
+  <li $currentview['digest']><a href="forum.php?mod=guide&view=digest">{lang guide_digest}</a></li>
+  <li $currentview['new']><a href="forum.php?mod=guide&view=new">{lang guide_new}</a></li>
+  <li $currentview['newthread']><a href="forum.php?mod=guide&view=newthread">{lang guide_newthread}</a></li>
+  <li $currentview['sofa']><a href="forum.php?mod=guide&view=sofa">{lang guide_sofa}</a></li>
+  <li $currentview['my']><a id="filter_special" href="forum.php?mod=guide&view=my" onmouseover="showMenu(this.id)">{lang guide_my}</a></li>
+  <!--{hook/guide_nav_extra}-->
+</ul>
+<!--{hook/guide_top}-->
+
 <div class="boardnav">
-	<div id="ct" class="wp cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
-		<div class="mn">
-			<div class="bm bml pbn">
-				<div class="bm_h cl">
-					<!--{if $view != 'index' && $view != 'my'}-->
-					<span class="y">
-						<a href="forum.php?mod=guide&view=$view&rss=1" class="fa_rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a>
-					</span>
-					<!--{/if}-->
-					<h1 class="xs2">
-						$lang['guide_'.$view]
-					</h1>
-				</div>
-				<!--{if $view != 'my'}-->
-				<div class="bg-content">
-					<div id="forum_rules_1163">
-						<div class="ptn xg2">$lang['guide_'.$view.'_description']</div>
-					</div>
-				</div>
-				<!--{/if}-->
-			</div>
-			<!--{if $view != 'index'}-->
-			<div id="pgt" class="bm bw0 pgs cl">
-				<a href="forum.php?mod=misc&amp;action=nav" class="btn btn-ready"><i class="fas fa-pencil-alt"></i> {lang send_posts}</a>
-			</div>
-			<!--{/if}-->
-			<ul id="thread_types" class="listmenucat">
-				<li $currentview['hot']><a href="forum.php?mod=guide&view=hot">{lang guide_hot}</a></li>
-				<li $currentview['digest']><a href="forum.php?mod=guide&view=digest">{lang guide_digest}</a></li>
-				<li $currentview['new']><a href="forum.php?mod=guide&view=new">{lang guide_new}</a></li>
-				<li $currentview['newthread']><a href="forum.php?mod=guide&view=newthread">{lang guide_newthread}</a></li>
-				<li $currentview['sofa']><a href="forum.php?mod=guide&view=sofa">{lang guide_sofa}</a></li>
-				<li $currentview['my']><a id="filter_special" href="forum.php?mod=guide&view=my" onmouseover="showMenu(this.id)">{lang guide_my}</a></li>
-				<!--{hook/guide_nav_extra}-->
-			</ul>
-			<!--{hook/guide_top}-->
+	<div>
+		<div>
 			<!--{if $view == 'index'}-->
 				<!--{loop $data $key $list}-->
 				<div class="bm bmw">
@@ -81,9 +64,9 @@
 				<!--{/loop}-->
 			<!--{else}-->
 				<!--{loop $data $key $list}-->
-				<div id="threadlist" class="tl bm bmw"{if $_G['uid']} style="position: relative;"{/if}>
+				<div id="threadlist" class="tl bm bmw" >
 					<div class="th">
-						<table cellspacing="0" cellpadding="0">
+						<table class="uk-table-responsive">
 							<tr>
 								<th colspan="2">
 									{lang title}
@@ -136,7 +119,7 @@
 					</div>
 					<div class="bg-content">
 						<div id="forumnew" style="display:none"></div>
-							<table cellspacing="0" cellpadding="0">
+							<table class="uk-table-responsive">
 							<!--{subtemplate forum/guide_list_row}-->
 							</table>
 					</div>
@@ -144,7 +127,6 @@
 				<!--{/loop}-->
 				<div class="bm bw0 pgs cl">
 					$multipage
-					<span class="pgb y"><a href="forum.php?mod=guide">{lang guide_index}</a></span>
 				</div>
 			<!--{/if}-->
 			<!--{hook/guide_bottom}-->

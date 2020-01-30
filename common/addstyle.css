@@ -257,18 +257,16 @@ select {
 }
 .listmenucat {
   border: none;
-  position: relative;
-  z-index: 50;
+  padding: 10px;
 }
 .listmenucat li {
-  float: left;
   padding-bottom: 5px;
   list-style: none;
   margin: 0;
   padding: 0;
+  display: unset !important;
 }
 .listmenucat li a {
-  float: left;
   margin-right: 5px;
   padding: 4px 8px 3px;
   border: 1px solid #CDCDCD;
@@ -278,11 +276,12 @@ select {
   text-decoration: none;
   border-radius: 4px;
 }
-.listmenucatative a, .listmenucat li a:hover {
+.listmenucatative a, .listmenucat li a:hover, .xw1 a {
   background: #222 !important;
   color: #FFF !important;
 
 }
+.tl .th td, .tl .th th { font-weight: 800; }
 .bg-head {
   background-color: #CCC;
   color: #000;
@@ -338,4 +337,7 @@ select {
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
+}
+.t_fsz {
+  min-height: auto !important;
 }
